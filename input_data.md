@@ -89,7 +89,8 @@ BAUS is usually run using scenario-based inputs. These represent various potenti
 * Each scenario-specific modfication table (e.g., for Scenario 4 see [zoning_mods_4.csv](https://github.com/BayAreaMetro/bayarea_urbansim/blob/master/data/zoning_mods_4.csv)) contains modifcations to the existing zoning including up/down-zoning and the addition/subtraction of allowed uses. If nothing is noted in a row, existing planned land use is retained in this scenario. Modifications are of various types:
 * Changing the Planned Land Use to allow more/less development intensity or additional/fewer building types. This is used to upzone and allow multi-family residential in many growth areas; and to upzone and limit growth to industrial in PPAs.
 * Implement the UGB. Disallow growth outside existing UGBs or outside city limits when a city has no UGB.
-* Upzone areas within UGBs that have not zoning to typical suburban zoning for each county.
+* Change areas within UGBs that have not zoning to typical suburban zoning for each county.
+* In scenarios that assume the UGBs expand, some areas are changed to typical suburban zoning for that county.
 
 
 
