@@ -21,6 +21,9 @@ CONTENTS
 ## Regional Forecast
 The regional forecast contains 
 
+https://github.com/BayAreaMetro/bayarea_urbansim/blob/master/data/household_controls.csv
+https://github.com/BayAreaMetro/bayarea_urbansim/blob/master/data/employment_controls.csv
+
 ## Additional Zonal Demographic and Employment Data
 Beyond, the control totals
 
