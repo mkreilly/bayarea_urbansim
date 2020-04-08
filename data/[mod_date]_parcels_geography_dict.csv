@@ -1,11 +1,11 @@
 variable, type, length, missing_value, null_ok, required, longer_name, decription, notes
 geom_id	
-jurisdiction_id_old	
-pda_id	
-tpp_id	
-exp_id	
-opp_id	
-zoningmodcat	
+jurisdiction_id_old, int, ?, , no, no, PBA40 Jurisdiction FIPS Code, ,	
+pda_id, string, ?, , no, no, PBA40 Priority Development Area ID, ,	
+tpp_id, string, ?, , no, no, PBA40 Transit Priorty ID, ,	
+exp_id, string, ?, , no, no, PBA40 Expansion Area ID, ,	
+opp_id, string, ?, , no, no, PBA40 Opportunity Site ID, ,	
+zoningmodcat, string, ?, , no, no, PBA40 Zoning Modification Category, used to join zoningmods tables to parcels,	
 perffoot	
 perfarea	
 urbanized	
@@ -15,13 +15,13 @@ trich_id
 cat_id	
 zoninghzcat	
 PARCEL_ID	
-juris_id	
-gg_id	
-tra_id	
-sesit_id	
-ppa_id	
-exp2020_id	
-exsfd_id	
-pba50zoningmodcat	
+juris_id, string, ?, , no, no, PBA50 Jurisdiction ID, ,	
+gg_id, string, ?, , no, no, Growth Geography ID, ,	
+tra_id, string, ?, , no, no, PBA50 Transit Rich Area ID, ,	
+sesit_id, string, ?, , no, no, PBA50 Socioeconic Situation ID, whether area is high resoure or high displacement risk or both or neither ,	
+ppa_id, string, ?, , no, no, PBA50 Priority Production Area ID, ,	
+exp2020_id, string, ?, , no, no, PBA50 Expansion Area ID, ,	
+exsfd_id, string, ?, , no, no, PBA50 Existing Single Family Home on Parcel ID, ,	
+pba50zoningmodcat, string, ?, , no, no, PBA50 Zoning Modifcation Category, used to join zoningmods tables to parcels,	
 nodev	
 jurisdiction_id
