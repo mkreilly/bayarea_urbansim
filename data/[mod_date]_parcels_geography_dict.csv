@@ -1,27 +1,27 @@
 variable, type, length, missing_value, null_ok, required, longer_name, decription, notes
-geom_id	
+geom_id, int, ?, , no, ?, Parcel Geometry ID, joins this table to parcel table , is this field in use or parcel_id?	
 jurisdiction_id_old, int, ?, , no, no, PBA40 Jurisdiction FIPS Code, ,	
 pda_id, string, ?, , no, no, PBA40 Priority Development Area ID, ,	
 tpp_id, string, ?, , no, no, PBA40 Transit Priorty ID, ,	
 exp_id, string, ?, , no, no, PBA40 Expansion Area ID, ,	
 opp_id, string, ?, , no, no, PBA40 Opportunity Site ID, ,	
 zoningmodcat, string, ?, , no, no, PBA40 Zoning Modification Category, used to join zoningmods tables to parcels,	
-perffoot	
-perfarea	
-urbanized	
-juris_id_old	
-hra_id	
-trich_id	
-cat_id	
-zoninghzcat	
-PARCEL_ID	
+perffoot, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+perfarea, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+urbanized, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+juris_id_old, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+hra_id, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+trich_id, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+cat_id, string, ?, , no, no, PBA50 Growth Geography ID, ,	
+zoninghzcat, string, ?, , no, no, PBA50 Zoning Modifcation Category, used to join zoningmods tables to parcels,
+PARCEL_ID, int, ?, , no, ?, Parcel ID, joins this table to parcel table , is this field in use or geom_id?	
 juris_id, string, ?, , no, no, PBA50 Jurisdiction ID, ,	
-gg_id, string, ?, , no, no, Growth Geography ID, ,	
+gg_id, string, ?, , no, no, PBA50 Growth Geography ID, ,	
 tra_id, string, ?, , no, no, PBA50 Transit Rich Area ID, ,	
 sesit_id, string, ?, , no, no, PBA50 Socioeconic Situation ID, whether area is high resoure or high displacement risk or both or neither ,	
 ppa_id, string, ?, , no, no, PBA50 Priority Production Area ID, ,	
 exp2020_id, string, ?, , no, no, PBA50 Expansion Area ID, ,	
 exsfd_id, string, ?, , no, no, PBA50 Existing Single Family Home on Parcel ID, ,	
 pba50zoningmodcat, string, ?, , no, no, PBA50 Zoning Modifcation Category, used to join zoningmods tables to parcels,	
-nodev	
-jurisdiction_id
+nodev, string, ?, , no, no, PBA50 Growth Geography ID, ,
+jurisdiction_id, string, ?, , no, no, PBA50 Growth Geography ID, ,
