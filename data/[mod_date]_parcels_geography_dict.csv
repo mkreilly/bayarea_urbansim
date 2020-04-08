@@ -1,1 +1,27 @@
 variable, type, length, missing_value, null_ok, required, longer_name, decription, notes
+geom_id	
+jurisdiction_id_old	
+pda_id	
+tpp_id	
+exp_id	
+opp_id	
+zoningmodcat	
+perffoot	
+perfarea	
+urbanized	
+juris_id_old	
+hra_id	
+trich_id	
+cat_id	
+zoninghzcat	
+PARCEL_ID	
+juris_id	
+gg_id	
+tra_id	
+sesit_id	
+ppa_id	
+exp2020_id	
+exsfd_id	
+pba50zoningmodcat	
+nodev	
+jurisdiction_id
