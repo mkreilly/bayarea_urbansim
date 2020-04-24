@@ -16,12 +16,24 @@ ZONE_ID, ?, , , yes, no, , ,
 development_projects_id, ?, , , yes, yes, , ,	
 raw_id, ?, , , yes, no, , ,	
 building_name, ?, , , yes, no, , ,	
-scen0, ?, , , yes, yes, , ,	
+scen0, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen1, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen2, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen3, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen4, ?, , , yes, yes, , ,	
-scen20, ?, , , yes, yes, , ,	
-scen21, ?, , , yes, yes, , ,	
-scen22, ?, , , yes, yes, , ,	
-scen23, ?, , , yes, yes, , ,	
+scen5, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen6, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen7, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen10, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen11, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen12, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen15, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen20, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen21, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen22, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen23, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen24, int, short, , yes, yes, , ,	dummy for use in this scenario
+scen25, int, short, , yes, yes, , ,	dummy for use in this scenario
 zip, ?, , , yes, no, , ,	
 x, ?, , , yes, yes, , ,	
 y, ?, , , yes, yes, , ,	
