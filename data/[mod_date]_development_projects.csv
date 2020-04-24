@@ -1,21 +1,9 @@
 variable, type, length, missing_value, null_ok, required, longer_name, description, notes
-OBJECTID, ?, , , yes, no, , ,	
-site_name, ?, , , yes, no, , ,	
-action, ?, , , yes, yes, , ,	
-address, ?, , , yes, no, , ,	
-city, ?, , , yes, no, , ,	
-county, ?, , , yes, no, , ,	
-building_type, ?, , , yes, yes, , ,	
-building_sqft, ?, , , yes, yes, , ,	
-non_residential_sqft, ?, , , yes, yes, , ,	
-tenure, ?, , , yes, no, , ,	
-rent_type, ?, , , yes, no, , ,	
-parking_spaces, ?, , , yes, no, , ,	
-PARCEL_ID, ?, , , yes, yes, , ,	
-ZONE_ID, ?, , , yes, no, , ,	
 development_projects_id, ?, , , yes, yes, , ,	
 raw_id, ?, , , yes, no, , ,	
-building_name, ?, , , yes, no, , ,	
+building_name, ?, , , yes, no, , ,
+site_name, ?, , , yes, no, , ,	
+action, ?, , , yes, yes, , ,
 scen0, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen1, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen2, int, short, , yes, yes, , ,	dummy for use in this scenario
@@ -34,11 +22,29 @@ scen22, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen23, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen24, int, short, , yes, yes, , ,	dummy for use in this scenario
 scen25, int, short, , yes, yes, , ,	dummy for use in this scenario
+address, ?, , , yes, no, , ,	
+city, ?, , , yes, no, , ,	
 zip, ?, , , yes, no, , ,	
+county, ?, , , yes, no, , ,	
 x, ?, , , yes, yes, , ,	
 y, ?, , , yes, yes, , ,	
 geom_id, ?, , , yes, yes, , ,	
 year_built, ?, , , yes, yes, , ,	
+building_type, ?, , , yes, yes, , ,	
+building_sqft, ?, , , yes, yes, , ,	
+non_residential_sqft, ?, , , yes, yes, , ,	
+tenure, ?, , , yes, no, , ,	
+rent_type, ?, , , yes, no, , ,	
+parking_spaces, ?, , , yes, no, , ,	
+PARCEL_ID, ?, , , yes, yes, , ,	
+ZONE_ID, ?, , , yes, no, , ,	
+
+
+
+
+
+
+
 residential_units, ?, , , yes, yes, , ,	
 unit_ave_sqft, ?, , , yes, no, , ,	
 stories, ?, , , yes, no, , ,	
