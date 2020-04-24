@@ -1,27 +1,27 @@
 variable, type, length, missing_value, null_ok, required, longer_name, description, notes
-development_projects_id, int, ? , , yes, yes, , ,	
+development_projects_id, int, ? , , no, yes, , ,	
 raw_id, int, ?, , yes, no, , ,	
 building_name, string, ?, , yes, no, , ,
 site_name, string, ?, , yes, no, , ,	
-action, string, ?, , yes, yes, , ,
-scen0, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen1, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen2, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen3, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen4, int, short, , yes, yes, , ,	
-scen5, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen6, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen7, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen10, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen11, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen12, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen15, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen20, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen21, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen22, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen23, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen24, int, short, , yes, yes, , ,	dummy for use in this scenario
-scen25, int, short, , yes, yes, , ,	dummy for use in this scenario
+action, string, ?, , no, yes, , ,
+scen0, int, short, , no, yes, , ,	dummy for use in this scenario
+scen1, int, short, , no, yes, , ,	dummy for use in this scenario
+scen2, int, short, , no, yes, , ,	dummy for use in this scenario
+scen3, int, short, , no, yes, , ,	dummy for use in this scenario
+scen4, int, short, , no, yes, , ,	
+scen5, int, short, , no, yes, , ,	dummy for use in this scenario
+scen6, int, short, , no, yes, , ,	dummy for use in this scenario
+scen7, int, short, , no, yes, , ,	dummy for use in this scenario
+scen10, int, short, , no, yes, , ,	dummy for use in this scenario
+scen11, int, short, , no, yes, , ,	dummy for use in this scenario
+scen12, int, short, , no, yes, , ,	dummy for use in this scenario
+scen15, int, short, , no, yes, , ,	dummy for use in this scenario
+scen20, int, short, , no, yes, , ,	dummy for use in this scenario
+scen21, int, short, , no, yes, , ,	dummy for use in this scenario
+scen22, int, short, , no, yes, , ,	dummy for use in this scenario
+scen23, int, short, , no, yes, , ,	dummy for use in this scenario
+scen24, int, short, , no, yes, , ,	dummy for use in this scenario
+scen25, int, short, , no, yes, , ,	dummy for use in this scenario
 address, ?, , , yes, no, , ,	
 city, ?, , , yes, no, , ,	
 zip, ?, , , yes, no, , ,	
