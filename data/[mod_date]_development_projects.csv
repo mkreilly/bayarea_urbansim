@@ -33,23 +33,16 @@ year_built, ?, , , yes, yes, , ,
 building_type, ?, , , yes, yes, , ,	
 building_sqft, ?, , , yes, yes, , ,	
 non_residential_sqft, ?, , , yes, yes, , ,	
-tenure, ?, , , yes, no, , ,	
-rent_type, ?, , , yes, no, , ,	
-parking_spaces, ?, , , yes, no, , ,	
-PARCEL_ID, ?, , , yes, yes, , ,	
-ZONE_ID, ?, , , yes, no, , ,	
-
-
-
-
-
-
-
 residential_units, ?, , , yes, yes, , ,	
 unit_ave_sqft, ?, , , yes, no, , ,	
-stories, ?, , , yes, no, , ,	
+tenure, ?, , , yes, no, , ,	
+rent_type, ?, , , yes, no, , ,	
+stories, ?, , , yes, no, , ,
+parking_spaces, ?, , , yes, no, , ,	
 average_weighted_rent, ?, , , yes, no, , ,	
 last_sale_year, ?, , , yes, no, , ,	
 last_sale_price	source, ?, , , yes, no, , ,	
+PARCEL_ID, ?, , , yes, yes, , ,	
+ZONE_ID, ?, , , yes, no, , ,	
 edit_date, ?, , , yes, no, , ,	
 editor, ?, , , yes, no, , ,
