@@ -45,5 +45,5 @@ last_sale_price,double, ?, , yes, no, , ,"	"
 source,string,,, yes, no,,,
 PARCEL_ID, int, >, ,no, yes, , ,"	"
 ZONE_ID, int, ?, ,no, no, , ,"	"
-edit_date, int, short, , yes, no, , ,"	"
+edit_date, int,long, , yes, no, , ,"	"
 editor, string, ?, , yes, no, , ,
