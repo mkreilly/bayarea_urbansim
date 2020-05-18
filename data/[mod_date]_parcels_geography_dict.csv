@@ -1,27 +1,27 @@
 variable, type, length, missing_value, null_ok, required, longer_name, decription, notes
-geom_id, int, ?, , no, ?, Parcel Geometry ID, joins this table to parcel table , is this field in use or parcel_id?	
-jurisdiction_id_old, ?, ?, , no, no, OLD PBA40 Jurisdiction FIPS Code, ,	
-pda_id, string, 15, , no, no, PBA40 Priority Development Area ID, ,	
-tpp_id, string, 15, , no, no, PBA40 Transit Priorty ID, ,	
-exp_id, string, 15, , no, no, PBA40 Expansion Area ID, ,	
-opp_id, string, 15, , no, no, PBA40 Opportunity Site ID, ,	
-zoningmodcat, string, 50, , no, no, PBA40 Zoning Modification Category, used to join zoningmods tables to parcels,	
-perffoot, int, ?, , no, no, PBA40 Performance Footprint, ,	
-perfarea, int, ?, , no, no, PBA40 Performance Area, ,	
-urbanized, string, ?, , no, no, PBA40 Urbanized Area, ,	
-juris_id_old, string, ?, , no, no, Horizon Jurisdiction ID, ,	
-hra_id, string, 15, , no, no, Horizon High Resource Area ID, ,	
-trich_id, string, 15, , no, no, Horizon Transit Rich Area ID, ,	
-cat_id, string, 45, , no, no, Horizon Growth Category ID, , useful for mapping policy application	
-zoninghzcat, string, 50, , no, no, Horizon Zoning Modifcation Category, used to join zoningmods tables to parcels,
-PARCEL_ID, int, ?, , no, ?, Parcel ID, joins this table to parcel table , is this field in use or geom_id?	
-juris_id, string, 5, , no, yes, PBA50 Jurisdiction ID, ,	
-gg_id, string, 5, , no, yes, PBA50 Growth Geography ID, ,	
-tra_id, string, 15, , no, yes, PBA50 Transit Rich Area ID, ,	
-sesit_id, string, 10, , no, yes, PBA50 Socioeconic Situation ID, whether area is high resoure or high displacement risk or both or neither ,	
-ppa_id, string, 5, , no, yes, PBA50 Priority Production Area ID, ,	
-exp2020_id, string, 15, , no, yes, PBA50 Expansion Area ID, ,	
-exsfd_id, string, 5, , no, yes, PBA50 Existing Single Family Home on Parcel ID, ,	
-pba50zoningmodcat, string, 70, , no, yes, PBA50 Zoning Modifcation Category, used to join zoningmods tables to parcels,	
+geom_id, int, ?, , no,yes, Parcel Geometry ID, joins this table to parcel table ," is this field in use or parcel_id?	"
+jurisdiction_id_old, ?, ?, , no, no, OLD PBA40 Jurisdiction FIPS Code, ,"	"
+pda_id, string,15, , no, no, PBA40 Priority Development Area ID, ,"	"
+tpp_id, string,15, , no, no, PBA40 Transit Priorty ID, ,"	"
+exp_id, string,15, , no, no, PBA40 Expansion Area ID, ,"	"
+opp_id, string,15, , no, no, PBA40 Opportunity Site ID, ,"	"
+zoningmodcat, string,50, , no, no, PBA40 Zoning Modification Category, used to join zoningmods tables to parcels,"	"
+perffoot, int, ?, , no, no, PBA40 Performance Footprint, ,"	"
+perfarea, int, ?, , no, no, PBA40 Performance Area, ,"	"
+urbanized, string, ?, , no, no, PBA40 Urbanized Area, ,"	"
+juris_id_old, string, ?, , no, no, Horizon Jurisdiction ID, ,"	"
+hra_id, string,15, , no, no, Horizon High Resource Area ID, ,"	"
+trich_id, string,15, , no, no, Horizon Transit Rich Area ID, ,"	"
+cat_id, string,45, , no, no, Horizon Growth Category ID, ," useful for mapping policy application	"
+zoninghzcat, string,50, , no, no, Horizon Zoning Modifcation Category, used to join zoningmods tables to parcels,
+PARCEL_ID, int, ?, , no, ?, Parcel ID, joins this table to parcel table ," is this field in use or geom_id?	"
+juris_id, string,5, , no, yes, PBA50 Jurisdiction ID, ,"	"
+gg_id, string,5, , no, yes, PBA50 Growth Geography ID, ,"	"
+tra_id, string,15, , no, yes, PBA50 Transit Rich Area ID, ,"	"
+sesit_id, string,10, , no, yes, PBA50 Socioeconic Situation ID, whether area is high resoure or high displacement risk or both or neither ,"	"
+ppa_id, string,5, , no, yes, PBA50 Priority Production Area ID, ,"	"
+exp2020_id, string,15, , no, yes, PBA50 Expansion Area ID, ,"	"
+exsfd_id, string,5, , no, yes, PBA50 Existing Single Family Home on Parcel ID, ,"	"
+pba50zoningmodcat, string,70, , no, yes, PBA50 Zoning Modifcation Category, used to join zoningmods tables to parcels,"	"
 nodev, int, ?, , no, yes, PBA50 No Development Allowed on Parcel, , one of multiple ways to dissalow dev
 jurisdiction_id, ?, ?, , no, no, UPDATED PBA40 Jurisdiction Code, ,
