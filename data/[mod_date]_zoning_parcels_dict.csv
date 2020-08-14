@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 variable,type,length,missing_value,null_ok,required,longer_name,decription,notes
 geom_id,int,32, ,no,yes,Parcel Geometry ID,joins this table to parcels table ,
 PARCEL_ID,int,28, ,no,no,Parcel ID for p10,as a backup to join this table to parcels table ,
@@ -9,16 +8,3 @@ juris_id,string,76, ,no,no,PBA50 Jurisdiction Full Name, ,
 prop,int,24, ,no,no,PBA40 Base Zoning Data Source, ,"	"
 tablename_pba40,string,15, ,no,no,PBA40 Opportunity Site ID, ,"	"
 nodev,int,28, ,no,yes,PBA50 No Development Allowed on Parcel, , one of multiple ways to dissalow dev
-=======
-variable, type, length, missing_value, null_ok, required, longer_name, decription, notes
-geom_id, int, ?, , no, ?, Parcel Geometry ID, joins this table to parcel table ," is this field in use or parcel_id?	"
-zoning_id_pba40, int, ?, , no, no, PBA40 Base Zoning ID,joins this table to zoning_lookup table,"	"
-zoning_pba40, string, 15, , no, no, PBA40 Base Zoning Type, ,"	"
-juris_pba40,int,5, , no, no, PBA40 Parcel Jurisdiction Designation (code), ,"	"
-prop_pba40,int,?, , no, no,PBA40 Base Zoning Data Source, ,"	"
-tablename_pba40, string, 15, , no, no, PBA40 Opportunity Site ID, ,"	"
-nodev_pba40,int, 50, , no, no, PBA40 No Development Allowed on Parcel,,"	"
-PARCEL_ID, int, ?, , no,yes, Parcel ID for p10, joins this table to parcel table ," is this field in use or geom_id?	"
-nodev, int, ?, , no, yes, PBA50 No Development Allowed on Parcel, , one of multiple ways to dissalow dev
-juris_id,string, ?, , no,yes,PBA50 Jurisdiction Name (4-letter), ,
->>>>>>> master

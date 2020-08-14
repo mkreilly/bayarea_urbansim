@@ -1,6 +1,6 @@
 variable,type,length,missing_value,null_ok,required,longer_name,decription,notes
 geom_id,int,32, ,no,yes,Parcel Geometry ID,joins this table to parcel table ,
-PARCEL_ID,int,28, ,no,no,Parcel ID,as a backup to join this table to parcel table ,
+PARCEL_ID,int,28, ,no,no,Parcel ID for p10,as a backup to join this table to parcel table ,
 jurisdiction_id,int,28, ,no,yes,PBA50 Jurisdiction FIPS Code,"joins ""census_id_to_name.csv"" to get full jurisdiction name",
 juris,string,76,,no,yes,PBA50 Jurisdiction Full Name,used to generate output,
 juris_id,string,5, ,no,no,PBA50 Jurisdiction Name in 4-letter abbreviation, ,"	"
