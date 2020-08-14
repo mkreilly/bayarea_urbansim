@@ -1,1 +1,13 @@
-variable, type, missing_value, null_ok, required, longer_name, description, notes
+variable,type,length,missing_value,null_ok,required,longer_name,description,notes
+OBJECTID,int,32,yes,yes,no,,,
+Join_Count,int,32,yes,yes,no,,,
+TARGET_FID,int,32,yes,yes,,,,
+PARCEL_ID,int,32,no,no,yes,Parcel ID for p10,joins this table to parcels table ,
+ZONE_ID,int,32,no,no,yes,TAZ Zone ID,is joined to parcels,
+manual_county,int,32,yes,yes,no,County ID,deprecated,
+taz_key,int,28,yes,yes,no,,,
+county,string,52,yes,yes,no,County Name in 3-letter abbreviation,,
+subzone,string,270,no,no,yes,Subzone ID within Each TAZ,is merged into parcels,
+taz_sub,string,54,no,no,yes,Combined TAZ and Subzone ID,is merged into parcels,
+Shape_Length,float,32,yes,yes,no,,,
+Shape_Area,float,32,yes,yes,no,,,

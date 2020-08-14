@@ -1,1 +1,8 @@
-variable, type, missing_value, null_ok, required, longer_name, description, notes
+variable,type,length,missing_value,null_ok,required,longer_name,description,notes
+OBJECTID_1,int,32,yes,yes,no,,,
+PARCEL_ID,int,32,no,no,yes,Parcel ID for p10,joins this table to parcels table ,
+APN,string,63,yes,yes,no,APN for p10,,
+geom_id_s,int,32,yes,yes,no,Parcel Geometry ID,as a backup to join this table to parcels table ,
+Min_Shape_Length,float,32,yes,yes,no,,,
+Min_Shape_Area,float,32,yes,yes,no,,,
+maz,int,32,no,no,yes,Maz ID,is merged into parcels,
