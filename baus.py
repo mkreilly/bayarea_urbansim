@@ -16,6 +16,9 @@ import socket
 import argparse
 import warnings
 from baus.utils import compare_summary
+# for urbanforecast.com visualizer
+if "URBANSIM_SLACK" in os.environ:
+    from baus.utils import ue_config, ue_files 
 
 warnings.filterwarnings("ignore")
 
@@ -48,6 +51,8 @@ LAST_KNOWN_GOOD_RUNS = {
 }
 
 orca.add_injectable("years_per_iter", EVERY_NTH_YEAR)
+
+orca.add_injectable("base_year", IN_YEAR)
 
 parser = argparse.ArgumentParser(description='Run UrbanSim models.')
 
@@ -167,6 +172,7 @@ def get_simulation_models(SCENARIO):
         "retail_developer",
         "office_developer",
         "accessory_units",
+        "calculate_vmt_fees",
 
         # (for buildings that were removed)
         "remove_old_units",
@@ -224,7 +230,8 @@ def get_simulation_models(SCENARIO):
     # calculate VMT taxes
     vmt_settings = \
         orca.get_injectable("policy")["acct_settings"]["vmt_settings"]
-    if SCENARIO in vmt_settings["com_for_com_scenarios"]:
+    if SCENARIO in vmt_settings["com_for_com_scenarios"] and \
+            SCENARIO not in vmt_settings["db_geography_scenarios"]:
         models.insert(models.index("office_developer"),
                       "subsidized_office_developer")
 
@@ -237,6 +244,17 @@ def get_simulation_models(SCENARIO):
                       "subsidized_residential_feasibility")
         models.insert(models.index("alt_feasibility"),
                       "subsidized_residential_developer_vmt")
+
+    # calculate jobs-housing fees
+    jobs_housing_settings = \
+        orca.get_injectable("policy")["acct_settings"]["jobs_housing_fee_settings"]
+    if SCENARIO in jobs_housing_settings["jobs_housing_com_for_res_scenarios"]:
+        models.insert(models.index("diagnostic_output"),
+                      "calculate_jobs_housing_fees")
+    #    models.insert(models.index("alt_feasibility"),
+    #                  "subsidized_residential_feasibility")
+    #    models.insert(models.index("alt_feasibility"),
+    #                  "subsidized_residential_developer_jobs_housing")
 
     return models
 
@@ -298,6 +316,7 @@ def run_models(MODE, SCENARIO):
                 "elcm_simulate",
 
                 "price_vars",
+#                "scheduled_development_events",
 
                 "topsheet",
                 "simulation_validation",
@@ -385,7 +404,7 @@ print("Random Seed : ", RANDOM_SEED)
 
 if SLACK:
     slack.chat.post_message(
-        '#sim_updates',
+        '#urbansim_sim_update',
         'Starting simulation %d on host %s (scenario: %s)' %
         (run_num, host, SCENARIO), as_user=True)
 
@@ -397,7 +416,7 @@ except Exception as e:
     print(traceback.print_exc())
     if SLACK:
         slack.chat.post_message(
-            '#sim_updates',
+            '#urbansim_sim_update',
             'DANG!  Simulation failed for %d on host %s'
             % (run_num, host), as_user=True)
     else:
@@ -406,23 +425,18 @@ except Exception as e:
 
 print("Finished", time.ctime())
 
-if MAPS:
-
-    from urbansim_explorer import sim_explorer as se
-    se.start(
-        'runs/run%d_simulation_output.json' % run_num,
-        'runs/run%d_parcel_output.csv' % run_num,
-        write_static_file='/var/www/html/sim_explorer%d.html' % run_num
-    )
+if MAPS and 'travel_model_output' in get_simulation_models(SCENARIO):
+    files_msg1, files_msg2 = ue_files(run_num)
+    config_resp = ue_config(run_num, host)
 
 if SLACK:
     slack.chat.post_message(
-        '#sim_updates',
+        '#urbansim_sim_update',
         'Completed simulation %d on host %s' % (run_num, host), as_user=True)
 
-    slack.chat.post_message(
+    """slack.chat.post_message(
         '#sim_updates',
-        'UrbanSim explorer is available at ' +
+        'Urbanexplorer is available at ' +
         'http://urbanforecast.com/sim_explorer%d.html' % run_num, as_user=True)
 
     slack.chat.post_message(
@@ -435,7 +449,7 @@ if SLACK:
         '#sim_updates',
         'Targets comparison is available at ' +
         'http://urbanforecast.com/runs/run%d_targets_comparison_2050.csv' %
-        run_num, as_user=True)
+        run_num, as_user=True)"""
 
 
 summary = ""
@@ -464,14 +478,14 @@ if SLACK and MODE == "simulation":
     if len(summary.strip()) != 0:
         sum_lines = len(summary.strip().split("\n"))
         slack.chat.post_message(
-            '#sim_updates',
+            '#urbansim_sim_update',
             ('Difference report is available at ' +
              'http://urbanforecast.com/runs/run%d_difference_report.log ' +
              '- %d line(s)') % (run_num, sum_lines),
             as_user=True)
     else:
         slack.chat.post_message(
-            '#sim_updates', "No differences with reference run.", as_user=True)
+            '#urbansim_sim_update', "No differences with reference run.", as_user=True)
 
 if S3:
     os.system('ls runs/run%d_* ' % run_num +
