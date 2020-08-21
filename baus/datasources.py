@@ -260,10 +260,13 @@ def baseyear_taz_controls():
 
 
 @orca.table(cache=True)
-def base_year_summary_taz():
-    return pd.read_csv(os.path.join('output',
-                       'baseyear_taz_summaries_2010.csv'),
-                       index_col="zone_id")
+def base_year_summary_taz(mapping):
+    df = pd.read_csv(os.path.join('output',
+                                  'baseyear_taz_summaries_2010.csv'),
+                     index_col="zone_id")
+    cmap = mapping["county_id_tm_map"]
+    df['COUNTY_NAME'] = df.COUNTY.map(cmap)
+    return df
 
 
 # non-residential rent data
@@ -507,7 +510,7 @@ def parcels_geography(parcels, scenario, settings):
     # assert no empty juris values
     assert True not in df.juris_name.isnull().value_counts()
 
-    df['juris_trich'] = df.juris_id + df.trich_id
+    df['juris_trich'] = df.juris + '-' + df.trich_id
 
     df["pda_id_pba40"] = df.pda_id_pba40.str.lower()
     # danville wasn't supposed to be a pda
@@ -516,11 +519,11 @@ def parcels_geography(parcels, scenario, settings):
     # Add Draft Blueprint geographies: PDA, TRA, PPA, sesit
     df["pda_id_pba50"] = df.pda_id_pba50.str.lower()
     df["tra_id"] = df.tra_id.str.lower()
-    df['juris_tra'] = df.juris_id + df.tra_id
+    df['juris_tra'] = df.juris + '-' + df.tra_id
     df["ppa_id"] = df.ppa_id.str.lower()
-    df['juris_ppa'] = df.juris_id + df.ppa_id
+    df['juris_ppa'] = df.juris + '-' + df.ppa_id
     df["sesit_id"] = df.sesit_id.str.lower()
-    df['juris_sesit'] = df.juris_id + df.sesit_id
+    df['juris_sesit'] = df.juris + '-' + df.sesit_id
 
     return df
 
@@ -863,10 +866,12 @@ def abag_targets():
 
 
 @orca.table(cache=True)
-def taz_geography(superdistricts):
+def taz_geography(superdistricts, mapping):
     tg = pd.read_csv(
         os.path.join(misc.data_dir(), "taz_geography.csv"),
         index_col="zone")
+    cmap = mapping["county_id_tm_map"]
+    tg['county_name'] = tg.county.map(cmap)
 
     # we want "subregion" geography on the taz_geography table
     # we have to go get it from the superdistricts table and join
