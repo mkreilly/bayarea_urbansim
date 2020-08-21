@@ -917,7 +917,8 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
     print('Fields of parcels: {}'.format(list(parcels_test)))
 
     parcels_geography_test = parcels_geography.to_frame()
-    print('Fields of parcels_geography: {}'.format(list(parcels_geography_test)))
+    print('Fields of parcels_geography: {}'.format(
+            list(parcels_geography_test)))
 
     buildings_test = buildings.to_frame()
     print('Fields of buildings: {}'.format(list(buildings_test)))
@@ -1048,7 +1049,8 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
 
             if parcel_output is not None:
 
-                print('Fields of parcel_output: {}'.format(list(parcel_output)))
+                print('Fields of parcel_output: {}'.format(
+                        list(parcel_output)))
 
                 parcel_output['subsidized_units'] = \
                     parcel_output.deed_restricted_units - \
@@ -1253,7 +1255,7 @@ def parcel_summary(parcels, buildings, households, jobs,
 
     df.to_csv(
         os.path.join("runs", "run%d_parcel_data_%d.csv" %
-                      (run_number, year))
+                     (run_number, year))
     )
 
     if year == final_year:
