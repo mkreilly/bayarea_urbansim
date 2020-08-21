@@ -726,8 +726,8 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
 
         # step 7
         df = df.sort_values(['subsidy_per_unit'], ascending=True)
-        # df.to_csv('subsidized_units_%d_%s_%s.csv' %
-        #           (orca.get_injectable("year"), account.name, subacct))
+        df.to_csv('subsidized_units_%d_%s_%s.csv' %
+                  (orca.get_injectable("year"), account.name, subacct))
 
         # step 8
         print("Amount in subaccount: ${:,.2f}".format(amount))

@@ -251,10 +251,10 @@ def get_simulation_models(SCENARIO):
     if SCENARIO in jobs_housing_settings["jobs_housing_com_for_res_scenarios"]:
         models.insert(models.index("diagnostic_output"),
                       "calculate_jobs_housing_fees")
-    #    models.insert(models.index("alt_feasibility"),
-    #                  "subsidized_residential_feasibility")
-    #    models.insert(models.index("alt_feasibility"),
-    #                  "subsidized_residential_developer_jobs_housing")
+        models.insert(models.index("alt_feasibility"),
+                      "subsidized_residential_feasibility")
+        models.insert(models.index("alt_feasibility"),
+                      "subsidized_residential_developer_jobs_housing")
 
     return models
 

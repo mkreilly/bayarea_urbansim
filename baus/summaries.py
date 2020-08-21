@@ -900,7 +900,7 @@ def diagnostic_output(households, buildings, parcels, taz, jobs, settings,
 @orca.step()
 def geographic_summary(parcels, households, jobs, buildings, taz_geography,
                        run_number, year, summary, final_year, scenario,
-                       policy, settings):
+                       policy, settings, parcels_geography):
     # using the following conditional b/c `year` is used to pull a column
     # from a csv based on a string of the year in add_population()
     # and in add_employment() and 2009 is the
@@ -910,6 +910,23 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
         base = True
     else:
         base = False
+
+    print('Year {}'.format(year))
+
+    parcels_test = parcels.to_frame()
+    print('Fields of parcels: {}'.format(list(parcels_test)))
+
+    parcels_geography_test = parcels_geography.to_frame()
+    print('Fields of parcels_geography: {}'.format(list(parcels_geography_test)))
+
+    buildings_test = buildings.to_frame()
+    print('Fields of buildings: {}'.format(list(buildings_test)))
+
+    jobs_test = jobs.to_frame()
+    print('Fields of jobs: {}'.format(list(jobs_test)))
+
+    households_test = households.to_frame()
+    print('Fields of households: {}'.format(list(households_test)))
 
     households_df = orca.merge_tables(
         'households',
@@ -1029,6 +1046,9 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
                 summary_table['non_residential_sqft'] / summary_table['totemp']
 
             if parcel_output is not None:
+
+                print('Fields of parcel_output: {}'.format(list(parcel_output)))
+
                 parcel_output['subsidized_units'] = \
                     parcel_output.deed_restricted_units - \
                     parcel_output.inclusionary_units
@@ -1222,7 +1242,7 @@ def parcel_summary(parcels, buildings, households, jobs,
 
     df.to_csv(
         os.path.join("runs", "run%d_parcel_data_%d.csv" %
-                     (run_number, year))
+                      (run_number, year))
     )
 
     if year == final_year:
