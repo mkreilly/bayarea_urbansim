@@ -1168,10 +1168,10 @@ def building_summary(parcels, run_number, year,
                  'deed_restricted_units', 'job_spaces', 'x', 'y', 'geom_id',
                  'source'])
 
-    df.to_csv(
-        os.path.join("runs", "run%d_building_data_%d.csv" %
-                     (run_number, year))
-    )
+#    df.to_csv(
+#        os.path.join("runs", "run%d_building_data_%d.csv" %
+#                     (run_number, year))
+#    )
 
 
 @orca.step()
@@ -1231,10 +1231,10 @@ def parcel_summary(parcels, buildings, households, jobs,
             parcel_id.value_counts()
     df["totemp"] = jobs_df.groupby('parcel_id').size()
 
-    df.to_csv(
-        os.path.join("runs", "run%d_parcel_data_%d.csv" %
-                     (run_number, year))
-    )
+#    df.to_csv(
+#        os.path.join("runs", "run%d_parcel_data_%d.csv" %
+#                     (run_number, year))
+#    )
 
     if year == final_year:
 
@@ -1251,10 +1251,10 @@ def parcel_summary(parcels, buildings, households, jobs,
 
             df[col] = df[col] - df2[col]
 
-        df.to_csv(
-            os.path.join("runs", "run%d_parcel_data_diff.csv" %
-                         run_number)
-        )
+#        df.to_csv(
+#            os.path.join("runs", "run%d_parcel_data_diff.csv" %
+#                         run_number)
+#        )
 
 
 @orca.step()
