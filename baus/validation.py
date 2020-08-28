@@ -50,14 +50,16 @@ def check_job_controls(jobs, employment_controls, year, mapping):
 
 
 def check_residential_units(residential_units, buildings, 
-                            run_number, year):
+                            year):
     print("Check residential units for year {}".format(year))
-    residential_units.to_csv(
-        os.path.join("runs", "run%d_residential_units_%d.csv" %
-                     (run_number, year)))
-    buildings.to_csv(
-        os.path.join("runs", "run%d_buildings_%d.csv" %
-                     (run_number, year)))
+    print('Type of residential_units: {}'.format(type(residential_units)))
+    print('Type of buildings: {}'.format(type(buildings)))
+    residential_units.to_frame().to_csv(
+        os.path.join("runs", "residential_units_%d.csv" %
+                     (year)))
+    buildings.to_frame().to_csv(
+        os.path.join("runs", "buildings_%d.csv" %
+                     (year)))
     # assert we fanned out the residential units correctly
     # assert len(residential_units) == buildings.residential_units.sum()
 
@@ -130,7 +132,7 @@ def simulation_validation(
 
     check_household_controls(households, household_controls, year)
 
-    check_residential_units(residential_units, buildings)
+    check_residential_units(residential_units, buildings, year)
 
     check_no_unplaced_households(households, year)
 

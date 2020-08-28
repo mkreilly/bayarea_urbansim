@@ -458,7 +458,8 @@ def remove_old_units(buildings, residential_units):
 
 
 @orca.step()
-def initialize_new_units(buildings, residential_units):
+def initialize_new_units(buildings, residential_units,
+                         run_number, year):
     """
     This data maintenance step initializes units for buildings that have been
     newly created, conforming to the data requirements of the
@@ -494,6 +495,9 @@ def initialize_new_units(buildings, residential_units):
     '''
 
     old_units = residential_units.to_frame(residential_units.local_columns)
+    old_units.to_csv(
+        os.path.join("runs", "run%d_old_units_%d.csv" %
+                     (run_number, year)))
     bldgs = buildings.to_frame(['residential_units', 'deed_restricted_units'])
 
     # Filter for residential buildings not currently represented in
@@ -503,8 +507,14 @@ def initialize_new_units(buildings, residential_units):
 
     # Create new units, merge them, and update the table
     new_units = _create_empty_units(new_bldgs)
+    new_units.to_csv(
+        os.path.join("runs", "run%d_new_units_%d.csv" %
+                     (run_number, year)))
     all_units = dev.merge(old_units, new_units)
     all_units.index.name = 'unit_id'
+    all_units.to_csv(
+        os.path.join("runs", "run%d_all_units_%d.csv" %
+                     (run_number, year)))
 
     print("Creating %d residential units for %d new buildings" %
           (len(new_units), len(new_bldgs)))
