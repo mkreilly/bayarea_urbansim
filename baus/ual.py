@@ -501,15 +501,64 @@ def initialize_new_units(buildings, residential_units,
     bldgs = buildings.to_frame(['residential_units', 'deed_restricted_units'])
 
     # Filter for residential buildings not currently represented in
-    # the units table
+    # the units table, and create new units
     new_bldgs = bldgs[~bldgs.index.isin(old_units.building_id)]
     new_bldgs = new_bldgs[new_bldgs.residential_units > 0]
 
-    # Create new units, merge them, and update the table
     new_units = _create_empty_units(new_bldgs)
     new_units.to_csv(
-        os.path.join("runs", "run%d_new_units_%d.csv" %
+            os.path.join("runs", "run%d_new_units_%d.csv" %
+                         (run_number, year)))
+
+    # Filter for residential buildings where ADUs were added and
+    # create new units
+    old_units_by_bldg = old_units.groupby(['building_id'])['num_units'].\
+            sum().reset_index()
+    old_units_by_bldg.rename(columns={'num_units': 'num_units_old'},
+                             inplace=True)
+    old_bldgs = bldgs[bldgs.index.isin(old_units.building_id)]
+    adu_bldgs = bldgs.merge(old_units_by_bldg, on='building_id', how='inner')
+    adu_bldgs['adu_count'] = \
+            adu_bldgs.residential_units - adu_bldgs.num_units_old
+    adu_bldgs = adu_bldgs[(adu_bldgs.adu_count > 0) & 
+                           adu_bldgs.index.isin(old_units.building_id)]
+
+    if len(adu_bldgs) > 0:
+        new_adus = pd.DataFrame({
+            'unit_residential_price': 0.0,
+            'unit_residential_rent': 0.0,
+            'num_units': 1,
+            'building_id': np.repeat(
+                adu_bldgs.index.values,
+                adu_bldgs.adu_count.values.astype(int)
+            ),
+            # counter of the units in a building
+            'unit_num': np.concatenate([
+                np.arange(num_units)
+                for num_units in adu_bldgs.adu_count.values.astype(int)
+            ]),
+            # ADUs are not deed restricted
+            'deed_restricted': 0.0,
+            'unit_count_start': np.repeat(
+                adu_bldgs.num_units_old,
+                adu_bldgs.adu_count.values.astype(int)),
+        }).sort_values(by=['building_id', 'unit_num']).reset_index(drop=True)
+
+        # update unit_num of ADUs to continue with the previous unit_num
+        # of non-ADUs in the same buildings
+        new_adus.unit_num = new_adus.unit_num + new_adus.unit_count_start
+        new_adus.drop(columns=['unit_count_start'], inplace=True)
+        new_adus.index.name = 'unit_id'
+
+        new_adus.to_csv(
+             os.path.join("runs", "run%d_new_adus_%d.csv" %
                      (run_number, year)))
+
+        new_units = dev.merge(new_units,new_adus)
+    else:
+        print('No ADUs were built.')
+
+    # Merge new units with old units and update the table
     all_units = dev.merge(old_units, new_units)
     all_units.index.name = 'unit_id'
     all_units.to_csv(

@@ -171,7 +171,7 @@ def get_simulation_models(SCENARIO):
         "developer_reprocess",
         "retail_developer",
         "office_developer",
-        #"accessory_units",
+        "accessory_units",
         "calculate_vmt_fees",
 
         # (for buildings that were removed)
