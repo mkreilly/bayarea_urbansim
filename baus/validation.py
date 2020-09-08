@@ -49,7 +49,7 @@ def check_job_controls(jobs, employment_controls, year, mapping):
     )
 
 
-def check_residential_units(residential_units, buildings, 
+def check_residential_units(residential_units, buildings,
                             year):
     print("Check residential units for year {}".format(year))
     print('Type of residential_units: {}'.format(type(residential_units)))

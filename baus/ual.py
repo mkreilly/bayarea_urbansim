@@ -516,21 +516,21 @@ def initialize_new_units(buildings, residential_units,
             {'unit_num': max,
              'num_units': 'count'}).reset_index()
     old_units_by_bldg.rename(columns={'num_units': 'num_units_old',
-                                      'unit_num' : 'max_num_old'},
+                                      'unit_num': 'max_num_old'},
                              inplace=True)
     old_bldgs = bldgs[bldgs.index.isin(old_units.building_id)]
     old_bldgs = old_bldgs[old_bldgs.residential_units > 0]
     old_bldgs.to_csv(
         os.path.join("runs", "run%d_old_bldgs_%d.csv" %
-                         (run_number, year)))
+                     (run_number, year)))
     adu_bldgs = pd.merge(old_bldgs, old_units_by_bldg,
                          left_index=True, right_on='building_id')
     adu_bldgs['adu_count'] = \
-            adu_bldgs.residential_units - adu_bldgs.num_units_old
+        adu_bldgs.residential_units - adu_bldgs.num_units_old
     adu_bldgs = adu_bldgs[adu_bldgs.adu_count > 0]
     adu_bldgs.to_csv(
         os.path.join("runs", "run%d_adu_bldgs_%d.csv" %
-                         (run_number, year)))
+                     (run_number, year)))
 
     if len(adu_bldgs) > 0:
         new_adus = pd.DataFrame({
@@ -551,19 +551,21 @@ def initialize_new_units(buildings, residential_units,
             'adu_count_start': np.repeat(
                 adu_bldgs.max_num_old+1,
                 adu_bldgs.adu_count.values.astype(int))
-        }).sort_values(by=['building_id', 'unit_num_adu']).reset_index(drop=True)
+        }).sort_values(by=['building_id',
+                           'unit_num_adu']).reset_index(drop=True)
 
         # update unit_num of ADUs to continue with the previous unit_num
         # of non-ADUs in the same buildings
         new_adus.unit_num = new_adus.unit_num_adu + new_adus.adu_count_start
-        new_adus.drop(columns=['adu_count_start','unit_num_adu'], inplace=True)
+        new_adus.drop(columns=['adu_count_start',
+                               'unit_num_adu'], inplace=True)
         new_adus.index.name = 'unit_id'
 
         new_adus.to_csv(
              os.path.join("runs", "run%d_new_adus_%d.csv" %
                      (run_number, year)))
 
-        new_units = dev.merge(new_units,new_adus)
+        new_units = dev.merge(new_units, new_adus)
     else:
         print('No ADUs were built.')
 
