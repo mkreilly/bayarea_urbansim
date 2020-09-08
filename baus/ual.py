@@ -512,16 +512,25 @@ def initialize_new_units(buildings, residential_units,
 
     # Filter for residential buildings where ADUs were added and
     # create new units
-    old_units_by_bldg = old_units.groupby(['building_id'])['num_units'].\
-            sum().reset_index()
-    old_units_by_bldg.rename(columns={'num_units': 'num_units_old'},
+    old_units_by_bldg = old_units.groupby(['building_id']).agg(
+            {'unit_num': max,
+             'num_units': 'count'}).reset_index()
+    old_units_by_bldg.rename(columns={'num_units': 'num_units_old',
+                                      'unit_num' : 'max_num_old'},
                              inplace=True)
     old_bldgs = bldgs[bldgs.index.isin(old_units.building_id)]
-    adu_bldgs = bldgs.merge(old_units_by_bldg, on='building_id', how='inner')
+    old_bldgs = old_bldgs[old_bldgs.residential_units > 0]
+    old_bldgs.to_csv(
+        os.path.join("runs", "run%d_old_bldgs_%d.csv" %
+                         (run_number, year)))
+    adu_bldgs = pd.merge(old_bldgs, old_units_by_bldg,
+                         left_index=True, right_on='building_id')
     adu_bldgs['adu_count'] = \
             adu_bldgs.residential_units - adu_bldgs.num_units_old
-    adu_bldgs = adu_bldgs[(adu_bldgs.adu_count > 0) & 
-                           adu_bldgs.index.isin(old_units.building_id)]
+    adu_bldgs = adu_bldgs[adu_bldgs.adu_count > 0]
+    adu_bldgs.to_csv(
+        os.path.join("runs", "run%d_adu_bldgs_%d.csv" %
+                         (run_number, year)))
 
     if len(adu_bldgs) > 0:
         new_adus = pd.DataFrame({
@@ -529,25 +538,25 @@ def initialize_new_units(buildings, residential_units,
             'unit_residential_rent': 0.0,
             'num_units': 1,
             'building_id': np.repeat(
-                adu_bldgs.index.values,
+                adu_bldgs.building_id,
                 adu_bldgs.adu_count.values.astype(int)
             ),
-            # counter of the units in a building
-            'unit_num': np.concatenate([
-                np.arange(num_units)
-                for num_units in adu_bldgs.adu_count.values.astype(int)
+            # counter of the AUDs in a building
+            'unit_num_adu': np.concatenate([
+                np.arange(num_adus)
+                for num_adus in adu_bldgs.adu_count.values.astype(int)
             ]),
             # ADUs are not deed restricted
             'deed_restricted': 0.0,
-            'unit_count_start': np.repeat(
-                adu_bldgs.num_units_old,
-                adu_bldgs.adu_count.values.astype(int)),
-        }).sort_values(by=['building_id', 'unit_num']).reset_index(drop=True)
+            'adu_count_start': np.repeat(
+                adu_bldgs.max_num_old+1,
+                adu_bldgs.adu_count.values.astype(int))
+        }).sort_values(by=['building_id', 'unit_num_adu']).reset_index(drop=True)
 
         # update unit_num of ADUs to continue with the previous unit_num
         # of non-ADUs in the same buildings
-        new_adus.unit_num = new_adus.unit_num + new_adus.unit_count_start
-        new_adus.drop(columns=['unit_count_start'], inplace=True)
+        new_adus.unit_num = new_adus.unit_num_adu + new_adus.adu_count_start
+        new_adus.drop(columns=['adu_count_start','unit_num_adu'], inplace=True)
         new_adus.index.name = 'unit_id'
 
         new_adus.to_csv(
