@@ -1424,6 +1424,7 @@ acct_settings:
   disable: False
 
   lump_sum_accounts:
+    # accounts for residential development policies
 
     # obag, where to spend the funds, how much to add, and which scenarios to
     # add it in - the amount is per year
@@ -1549,6 +1550,215 @@ acct_settings:
       enable_in_scenarios: ["11", "12", "15", "21", "22", "23"]
       default_amount_scenarios_db: ["21"]
       alternate_amount_scenarios_db: ["22", "23"]
+
+    # accounts for non-residential development policies
+    fremont_industrial_funding_settings:
+      name: 'Fremont Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Fremont' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    hayward_industrial_funding_settings:
+      name: 'Hayward Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Hayward' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    livermore_industrial_funding_settings:
+      name: 'Livermore Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Livermore' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    oakland_industrial_funding_settings:
+      name: 'Oakland Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Oakland' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    san_leandro_industrial_funding_settings:
+      name: 'San Leandro Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'San Leandro' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    union_city_industrial_funding_settings:
+      name: 'Union City Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Union City' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    unincorporated_contra_costa_industrial_funding_settings:
+      name: 'Contra Costa County Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Contra Costa County' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    antioch_industrial_funding_settings:
+      name: 'Antioch Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Antioch' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    concord_industrial_funding_settings:
+      name: 'Concord Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Concord' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    oakley_industrial_funding_settings:
+      name: 'Oakley Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Oakley' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    pittsburg_industrial_funding_settings:
+      name: 'Pittsburg Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Pittsburg' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    american_canyon_industrial_funding_settings:
+      name: 'American Canyon Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'American Canyon' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    milpitas_industrial_funding_settings:
+      name: 'Milpitas Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Milpitas' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    morgan_hill_industrial_funding_settings:
+      name: 'Morgan Hill Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Morgan Hill' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    san_jose_industrial_funding_settings:
+      name: 'San Jose Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'San Jose' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    unincorporated_santa_clara_industrial_funding_settings:
+      name: 'Santa Clara County Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Santa Clara County' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    san_francisco_industrial_funding_settings:
+      name: 'San Francisco Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'San Francisco' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    benicia_industrial_funding_settings:
+      name: 'Benicia Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Benicia' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    dixon_industrial_funding_settings:
+      name: 'Dixon Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Dixon' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    fairfield_industrial_funding_settings:
+      name: 'Fairfield Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Fairfield' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    pacifica_industrial_funding_settings:
+      name: 'Pacifica Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Pacifica' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    rio_vista_industrial_funding_settings:
+      name: 'Rio Vista Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Rio Vista' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    suisun_industrial_funding_settings:
+      name: 'Suisun City Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Suisun City' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    vacaville_industrial_funding_settings:
+      name: 'Vacaville Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 1131236
+      receiving_buildings_filter: juris == 'Vacaville' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    vallejo_industrial_funding_settings:
+      name: 'Vallejo Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Vallejo' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
+
+    cotati_industrial_funding_settings:
+      name: 'Cotati Industrial Funding'
+      sending_buildings_subaccount_def: regional
+      total_amount: 2849041
+      receiving_buildings_filter: juris == 'Cotati' & ppa_id > ''
+      subsidize_affordable: True
+      enable_in_scenarios: ["24"]
 
     # parcel tax settings
     parcel_tax_settings:
