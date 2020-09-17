@@ -85,6 +85,10 @@ def lump_sum_accounts(policy, year, buildings, coffer,
                 scenario in acct["alternate_amount_scenarios_db"]:
             amt = float(acct["alternate_total_amount_db"])
 
+        elif "default_amount_scenarios_fb" in acct and \
+                scenario in acct["default_amount_scenarios_fb"]:
+            amt = float(acct["total_amount_fb"])
+
         else:
             amt = float(acct["total_amount"])
 
@@ -706,6 +710,11 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
     elif "receiving_buildings_filter" in acct_settings:
         feasibility = feasibility.\
             query(acct_settings["receiving_buildings_filter"])
+    elif "receiving_buildings_filter_fb" in acct_settings and \
+            orca.get_injectable("scenario") in \
+            acct_settings["geography_scenarios_fb"]:
+        feasibility = feasibility.\
+            query(acct_settings["receiving_buildings_filter_fb"])
     else:
         # otherwise all buildings are valid
         pass
@@ -779,6 +788,7 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
                 "description": "Developing subsidized building",
                 "year": year,
                 "residential_units": new_building.residential_units,
+                "deed_restricted_units": new_building.deed_restricted_unit,
                 "building_id": index
             }
             account.add_transaction(amt, subaccount=subacct,
