@@ -350,6 +350,8 @@ def config(policy, inputs, run_number, scenario, parcels,
             amount = float(policy_loc["total_amount_db"])
         elif scenario in policy_loc["alternate_amount_scenarios_db"]:
             amount = float(policy_loc["alternate_total_amount_db"])
+        elif scenario in policy_loc["default_amount_scenarios_fb"]:
+            amount = float(policy_loc["total_amount_fb"])
         else:
             amount = float(policy_loc["total_amount"])
         # sum annual ammount over the simulation period
@@ -1072,8 +1074,8 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
             summary_table.to_csv(summary_csv)
 
     # Write Summary of Accounts
-    if year == final_year:
-
+    #if year == final_year:
+    if year in [2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050]:
         for acct_name, acct in orca.get_injectable("coffer").items():
             fname = "runs/run{}_acctlog_{}_{}.csv".\
                 format(run_number, acct_name, year)
@@ -2288,9 +2290,9 @@ def slack_report(year, base_year, slack_enabled, run_number, devproj_len,
                 % (run_number, host, devproj_len, dropped_devproj_scen,
                    dropped_devproj_geomid, dropped_devproj_proc), as_user=True)
 
-        unplaced_hh = orca.get_injectable("unplaced_hh")
-        if unplaced_hh > 0:
-            slack.chat.post_message(
-                '#urbansim_sim_update',
-                'WARNING: unplaced households in %d for run %d on %s'
-                % (year, run_number, host), as_user=True)
+        # unplaced_hh = orca.get_injectable("unplaced_hh")
+        # if unplaced_hh > 0:
+        #     slack.chat.post_message(
+        #         '#urbansim_sim_update',
+        #         'WARNING: unplaced households in %d for run %d on %s'
+        #         % (year, run_number, host), as_user=True)
