@@ -76,6 +76,10 @@ def lump_sum_accounts(policy, year, buildings, coffer,
                 scenario in acct["alternate_geography_scenarios"]:
             acct["receiving_buildings_filter"] = \
                 acct["alternate_buildings_filter"]
+        elif "geography_scenarios_fb" in acct and \
+                scenario in acct["geography_scenarios_fb"]:
+            acct["receiving_buildings_filter"] = \
+                acct["receiving_buildings_filter_fb"]
 
         if "default_amount_scenarios_db" in acct and \
                 scenario in acct["default_amount_scenarios_db"]:
@@ -707,14 +711,16 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
             acct_settings["alternate_geography_scenarios"]:
         feasibility = feasibility.\
             query(acct_settings["alternate_buildings_filter"])
-    elif "receiving_buildings_filter" in acct_settings:
-        feasibility = feasibility.\
-            query(acct_settings["receiving_buildings_filter"])
     elif "receiving_buildings_filter_fb" in acct_settings and \
             orca.get_injectable("scenario") in \
             acct_settings["geography_scenarios_fb"]:
+        print("receiving_buildings_filter: {}".format(acct_settings["receiving_buildings_filter_fb"]))
         feasibility = feasibility.\
             query(acct_settings["receiving_buildings_filter_fb"])
+    elif "receiving_buildings_filter" in acct_settings:
+        feasibility = feasibility.\
+            query(acct_settings["receiving_buildings_filter"])
+
     else:
         # otherwise all buildings are valid
         pass
@@ -799,22 +805,28 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
 
             if create_deed_restricted:
 
+                print('residential_units 1: {}'.format(new_building.residential_units))
                 revenue_per_unit = new_building.building_revenue / \
                     new_building.residential_units
                 total_subsidy = abs(new_building.max_profit)
                 subsidized_units = total_subsidy / revenue_per_unit + \
                     partial_subsidized_units
+                print('subsidized_units 1: {}'.format(subsidized_units))
                 # right now there are inclusionary requirements
                 already_subsidized_units = new_building.deed_restricted_units
+                print('already_subsidized_units: {}'.format(already_subsidized_units))
 
                 # get remainder
                 partial_subsidized_units = subsidized_units % 1
+                print('partial_subsidized_units: {}'.format(partial_subsidized_units))
                 # round off for now
                 subsidized_units = int(subsidized_units) + \
                     already_subsidized_units
+                print('subsidized_units 2: {}'.format(subsidized_units))
                 # cap at number of residential units
                 subsidized_units = min(subsidized_units,
                                        new_building.residential_units)
+                print('subsidized_units 3: {}'.format(subsidized_units))
 
                 buildings.local.loc[index, "deed_restricted_units"] =\
                     int(round(subsidized_units))
@@ -822,6 +834,7 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
                 # also correct the debug output
                 new_buildings.loc[index, "deed_restricted_units"] =\
                     int(round(subsidized_units))
+
             print("amt after If: {}".format(amt))
             print('res_units after If: {}'.format(new_building.residential_units))
             print('DR after If: {}'.format(new_building.deed_restricted_units))

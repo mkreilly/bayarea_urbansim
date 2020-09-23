@@ -1456,7 +1456,7 @@ acct_settings:
       default_amount_scenarios_db: ["21"]
       alternate_amount_scenarios_db: ["22", "23"]
       default_amount_scenarios_fb: ["24"]
-      geography_scenarios_fb: ["24"] 
+      geography_scenarios_fb: ["24"]
 
     contra_costa_bond_settings:
       name: "Contra Costa Affordable Housing Bond"
