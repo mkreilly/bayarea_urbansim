@@ -1448,7 +1448,7 @@ acct_settings:
       total_amount: 30625010
       total_amount_db: 2470820000
       alternate_total_amount_db: 3725535000
-      total_amount_fb: 3725540000
+      total_amount_fb: 4000000000
       receiving_buildings_filter: county == 'Alameda'
       receiving_buildings_filter_fb: county == 'Alameda' & gg_id > ''
       subsidize_affordable: True
@@ -1464,7 +1464,7 @@ acct_settings:
       total_amount: 21150756
       total_amount_db: 1647700000
       alternate_total_amount_db: 2484420000
-      total_amount_fb: 2484430000
+      total_amount_fb: 2500000000
       receiving_buildings_filter: county == 'Contra Costa'
       receiving_buildings_filter_fb: county == 'Contra Costa' & gg_id > ''
       subsidize_affordable: True
@@ -1480,7 +1480,7 @@ acct_settings:
       total_amount: 4932118
       total_amount_db: 341650000
       alternate_total_amount_db: 515145000
-      total_amount_fb: 515150000
+      total_amount_fb: 520000000
       receiving_buildings_filter: county == 'Marin'
       receiving_buildings_filter_fb: county == 'Marin' & gg_id > ''
       subsidize_affordable: True
@@ -1496,7 +1496,7 @@ acct_settings:
       total_amount: 2661050
       total_amount_db: 184960000
       alternate_total_amount_db: 278880000
-      total_amount_fb: 278890000
+      total_amount_fb: 300000000
       receiving_buildings_filter: county == 'Napa'
       receiving_buildings_filter_fb: county == 'Napa' & gg_id > ''
       subsidize_affordable: True
@@ -1512,7 +1512,7 @@ acct_settings:
       total_amount: 16310399
       total_amount_db: 1645215000
       alternate_total_amount_db: 2480675000
-      total_amount_fb: 2480680000
+      total_amount_fb: 3000000000
       receiving_buildings_filter: county == 'San Francisco'
       receiving_buildings_filter_fb: county == 'San Francisco' & gg_id > ''
       subsidize_affordable: True
@@ -1528,7 +1528,7 @@ acct_settings:
       total_amount: 14406372
       total_amount_db: 1477290000
       alternate_total_amount_db: 2227480000
-      total_amount_fb: 2227490000
+      total_amount_fb: 2500000000
       receiving_buildings_filter: county == 'San Mateo'
       receiving_buildings_filter_fb: county == 'San Mateo' & gg_id > ''
       subsidize_affordable: True
@@ -1544,7 +1544,7 @@ acct_settings:
       total_amount: 36291210
       total_amount_db: 3082915000
       alternate_total_amount_db: 4648455000
-      total_amount_fb: 4648460000
+      total_amount_fb: 5000000000
       receiving_buildings_filter: county == 'Santa Clara'
       receiving_buildings_filter_fb: county == 'Santa Clara' & gg_id > ''
       subsidize_affordable: True
@@ -1560,7 +1560,7 @@ acct_settings:
       total_amount: 8120789
       total_amount_db: 562040000
       alternate_total_amount_db: 847450000
-      total_amount_fb: 847460000
+      total_amount_fb: 850000000
       receiving_buildings_filter: county == 'Solano'
       receiving_buildings_filter_fb: county == 'Solano' & gg_id > ''
       subsidize_affordable: True
@@ -1576,7 +1576,7 @@ acct_settings:
       total_amount: 9451314
       total_amount_db: 653865000
       alternate_total_amount_db: 985905000
-      total_amount_fb: 985910000
+      total_amount_fb: 1000000000
       receiving_buildings_filter: county == 'Sonoma'
       receiving_buildings_filter_fb: county == 'Sonoma' & gg_id > ''
       subsidize_affordable: True

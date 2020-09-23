@@ -784,15 +784,18 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
         for index, new_building in new_buildings.iterrows():
 
             amt = new_building.max_profit
+            print("amt before If: {}".format(amt))
+            print('res_units before If: {}'.format(new_building.residential_units))
+            print('DR before If: {}'.format(new_building.deed_restricted_units))
             metadata = {
                 "description": "Developing subsidized building",
                 "year": year,
                 "residential_units": new_building.residential_units,
-                "deed_restricted_units": new_building.deed_restricted_unit,
+                "deed_restricted_units": new_building.deed_restricted_units,
                 "building_id": index
             }
-            account.add_transaction(amt, subaccount=subacct,
-                                    metadata=metadata)
+#            account.add_transaction(amt, subaccount=subacct,
+#                                    metadata=metadata)
 
             if create_deed_restricted:
 
@@ -819,6 +822,15 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
                 # also correct the debug output
                 new_buildings.loc[index, "deed_restricted_units"] =\
                     int(round(subsidized_units))
+            print("amt after If: {}".format(amt))
+            print('res_units after If: {}'.format(new_building.residential_units))
+            print('DR after If: {}'.format(new_building.deed_restricted_units))
+
+            metadata['residential_units_new'] = new_building.residential_units
+            metadata['deed_restricted_units_new'] = new_building.deed_restricted_units
+            account.add_transaction(amt, subaccount=subacct,
+                                    metadata=metadata)
+
 
         # turn off this assertion for the Draft Blueprint
         # affordable housing policy since the number of deed restricted units
