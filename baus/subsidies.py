@@ -809,6 +809,8 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
                 revenue_per_unit = new_building.building_revenue / \
                     new_building.residential_units
                 total_subsidy = abs(new_building.max_profit)
+                print('Revenue per unit: {}'.format(revenue_per_unit))
+                print('total_subsidy: {}'.format(total_subsidy))
                 subsidized_units = total_subsidy / revenue_per_unit + \
                     partial_subsidized_units
                 print('subsidized_units 1: {}'.format(subsidized_units))
@@ -837,10 +839,10 @@ def run_subsidized_developer(feasibility, parcels, buildings, households,
 
             print("amt after If: {}".format(amt))
             print('res_units after If: {}'.format(new_building.residential_units))
-            print('DR after If: {}'.format(new_building.deed_restricted_units))
+            print('DR after If: {}'.format(new_buildings.loc[index,'deed_restricted_units']))
 
             metadata['residential_units_new'] = new_building.residential_units
-            metadata['deed_restricted_units_new'] = new_building.deed_restricted_units
+            metadata['deed_restricted_units_new'] = new_buildings.loc[index,'deed_restricted_units']
             account.add_transaction(amt, subaccount=subacct,
                                     metadata=metadata)
 
