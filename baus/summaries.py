@@ -352,6 +352,8 @@ def config(policy, inputs, run_number, scenario, parcels,
             amount = float(policy_loc["total_amount_db"])
         elif scenario in policy_loc["alternate_amount_scenarios_db"]:
             amount = float(policy_loc["alternate_total_amount_db"])
+        elif scenario in policy_loc["default_amount_scenarios_fb"]:
+            amount = float(policy_loc["total_amount_fb"])
         elif scenario in (policy["acct_settings"]["lump_sum_accounts"]
                           [county+"_bond_settings"]["enable_in_scenarios"]):
             amount = float(policy_loc["total_amount"])
@@ -1189,10 +1191,10 @@ def geographic_summary(parcels, households, jobs, buildings, taz_geography,
 @orca.step()
 def building_summary(parcels, run_number, year,
                      buildings,
-                     initial_year, final_year):
+                     initial_year, final_year, residential_units, households):
 
-    if year not in [initial_year, 2015, final_year]:
-        return
+#    if year not in [initial_year, 2015, final_year]:
+#        return
 
     df = orca.merge_tables(
         'buildings',
