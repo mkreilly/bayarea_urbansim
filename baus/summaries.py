@@ -1210,6 +1210,15 @@ def building_summary(parcels, run_number, year,
                      (run_number, year))
     )
 
+    residential_units.to_frame().to_csv(
+        os.path.join("runs", "run%d_resunits_%d.csv" %
+                     (run_number, year))
+    )
+
+    households.to_frame().to_csv(
+        os.path.join("runs", "run%d_households_%d.csv" %
+                     (run_number, year))
+    )
 
 @orca.step()
 def parcel_summary(parcels, buildings, households, jobs,
