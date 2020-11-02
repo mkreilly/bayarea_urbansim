@@ -116,6 +116,51 @@ juris_to_county = {'alameda' : 'Alameda',
 'unincorporated_solano' : "Solano",
 'unincorporated_sonoma' : "Sonoma"}
 
+sd_mapping = {1 : 'SF NE',
+              2 : 'SF NW',
+              3 : 'SF S SE',
+              4 : 'SF SW',
+              5 : 'Daly City Millbrae',
+              6 : 'San Mateo',
+              7 : 'Redwood City',
+              8 : 'Palo Alto',
+              9 : 'Golden Triangle',
+              10 : 'West San Jose',
+              11 : 'San Jose CBD',
+              12 : 'East San Jose',
+              13 : 'South San Jose',
+              14 : 'SE Snta Clara Cnty',
+              15 : 'Tri Valley',
+              16 : 'Fremont',
+              17 : 'S Leandro Hayward',
+              18 : 'Oakland Alameda',
+              9 : 'Berkeley Eville',
+              20 : 'Richmond Pinole',
+              21 : 'Martinez Concord',
+              22 : 'Lamorinda WC',
+              23 : 'S Ramon Danville',
+              24 : 'East Contra Costa',
+              25 : 'Vallejo Benicia',
+              26 : 'Solano Remainder',
+              27 : 'Napa City and S',
+              28 : 'Napa Remainder',
+              29 : 'Southern Sonoma',
+              30 : 'Santa Rosa Area',
+              31 : 'Northern Sonoma',
+              32 : 'Northern Marin',
+              3 : 'Central Marin',
+              34 : 'Southern Marin'}
+
+
+county_mapping = {1: 'San Francisco',
+                  2: 'San Mateo',
+                  3: 'Santa Clara',
+                  4: 'Alameda',
+                  5: 'Contra Costa',
+                  6: 'Solano',
+                  7: 'Napa',
+                  8: 'Sonoma',
+                  9: 'Marin'}
 
 #calculate growth at the regional level for main variables using taz summaries
 def county_calculator(run_num, DF1, DF2):
@@ -140,6 +185,20 @@ def county_calculator(run_num, DF1, DF2):
         DF_merge['HHINCQ4 GROWTH'] = DF_merge['HHINCQ4_y']-DF_merge['HHINCQ4_x']
 
         DF_CO_GRWTH = DF_merge.groupby(['COUNTY_NAME_x']).sum().reset_index()
+
+        DF_CO_GRWTH['TOTPOP GROWTH SHR'] = round(DF_CO_GRWTH['TOTPOP GROWTH']/(DF_CO_GRWTH['TOTPOP_y'].sum()-DF_CO_GRWTH['TOTPOP_x'].sum()), 2)
+        DF_CO_GRWTH['TOTEMP GROWTH SHR'] = round(DF_CO_GRWTH['TOTEMP GROWTH']/(DF_CO_GRWTH['TOTEMP_y'].sum()-DF_CO_GRWTH['TOTEMP_x'].sum()), 2)
+        DF_CO_GRWTH['AGREMPN GROWTH SHR'] = round(DF_CO_GRWTH['AGREMPN GROWTH']/(DF_CO_GRWTH['AGREMPN_y'].sum()-DF_CO_GRWTH['AGREMPN_x'].sum()), 2)
+        DF_CO_GRWTH['FPSEMPN GROWTH SHR'] = round(DF_CO_GRWTH['FPSEMPN GROWTH']/(DF_CO_GRWTH['FPSEMPN_y'].sum()-DF_CO_GRWTH['FPSEMPN_x'].sum()), 2)
+        DF_CO_GRWTH['HEREMPN GROWTH SHR'] = round(DF_CO_GRWTH['HEREMPN GROWTH']/(DF_CO_GRWTH['HEREMPN_y'].sum()-DF_CO_GRWTH['HEREMPN_x'].sum()), 2)
+        DF_CO_GRWTH['MWTEMPN GROWTH SHR'] = round(DF_CO_GRWTH['MWTEMPN GROWTH']/(DF_CO_GRWTH['MWTEMPN_y'].sum()-DF_CO_GRWTH['MWTEMPN_x'].sum()), 2)
+        DF_CO_GRWTH['OTHEMPN GROWTH SHR'] = round(DF_CO_GRWTH['OTHEMPN GROWTH']/(DF_CO_GRWTH['OTHEMPN_y'].sum()-DF_CO_GRWTH['OTHEMPN_x'].sum()), 2)
+        DF_CO_GRWTH['RETEMPN GROWTH SHR'] = round(DF_CO_GRWTH['RETEMPN GROWTH']/(DF_CO_GRWTH['RETEMPN_y'].sum()-DF_CO_GRWTH['RETEMPN_x'].sum()), 2)
+        DF_CO_GRWTH['TOTHH GROWTH SHR'] = round(DF_CO_GRWTH['TOTHH GROWTH']/(DF_CO_GRWTH['TOTHH_y'].sum()-DF_CO_GRWTH['TOTHH_x'].sum()), 2)
+        DF_CO_GRWTH['HHINCQ1 GROWTH SHR'] = round(DF_CO_GRWTH['HHINCQ1 GROWTH']/(DF_CO_GRWTH['HHINCQ1_y'].sum()-DF_CO_GRWTH['HHINCQ1_x'].sum()), 2)
+        DF_CO_GRWTH['HHINCQ2 GROWTH SHR'] = round(DF_CO_GRWTH['HHINCQ2 GROWTH']/(DF_CO_GRWTH['HHINCQ2_y'].sum()-DF_CO_GRWTH['HHINCQ2_x'].sum()), 2)
+        DF_CO_GRWTH['HHINCQ3 GROWTH SHR'] = round(DF_CO_GRWTH['HHINCQ3 GROWTH']/(DF_CO_GRWTH['HHINCQ3_y'].sum()-DF_CO_GRWTH['HHINCQ3_x'].sum()), 2)
+        DF_CO_GRWTH['HHINCQ4 GROWTH SHR'] = round(DF_CO_GRWTH['HHINCQ4 GROWTH']/(DF_CO_GRWTH['HHINCQ4_y'].sum()-DF_CO_GRWTH['HHINCQ4_x'].sum()), 2)
 
         DF_CO_GRWTH['TOTPOP PCT GROWTH'] = round(DF_CO_GRWTH['TOTPOP_y']/DF_CO_GRWTH['TOTPOP_x']-1, 2)
         DF_CO_GRWTH['TOTEMP PCT GROWTH'] = round(DF_CO_GRWTH['TOTEMP_y']/DF_CO_GRWTH['TOTEMP_x']-1, 2)
@@ -183,6 +242,19 @@ def county_calculator(run_num, DF1, DF2):
                       'HHINCQ2 GROWTH',
                       'HHINCQ3 GROWTH',
                       'HHINCQ4 GROWTH',
+                      'TOTPOP GROWTH SHR',
+                      'TOTEMP GROWTH SHR',
+                      'AGREMPN GROWTH SHR',
+                      'FPSEMPN GROWTH SHR',
+                      'HEREMPN GROWTH SHR',
+                      'MWTEMPN GROWTH SHR',
+                      'OTHEMPN GROWTH SHR',
+                      'RETEMPN GROWTH SHR',
+                      'TOTHH GROWTH SHR',
+                      'HHINCQ1 GROWTH SHR',
+                      'HHINCQ2 GROWTH SHR',
+                      'HHINCQ3 GROWTH SHR',
+                      'HHINCQ4 GROWTH SHR',
                       'TOTPOP PCT GROWTH',
                       'TOTEMP PCT GROWTH',
                       'AGREMPN PCT GROWTH',
@@ -247,7 +319,11 @@ def taz_calculator(run_num, DF1, DF2):
         DF_merge['RES_UNITS GROWTH'] = DF_merge['RES_UNITS_y']-DF_merge['RES_UNITS_x']
         DF_merge['MFDU GROWTH'] = DF_merge['MFDU_y']-DF_merge['MFDU_x']
         DF_merge['SFDU GROWTH'] = DF_merge['SFDU_y']-DF_merge['SFDU_x']
-        
+
+        DF_merge['TOTPOP GROWTH SHR'] = round(DF_merge['TOTPOP GROWTH']/(DF_merge['TOTPOP_y'].sum()-DF_merge['TOTPOP_x'].sum()), 2)
+        DF_merge['TOTEMP GROWTH SHR'] = round(DF_merge['TOTEMP GROWTH']/(DF_merge['TOTEMP_y'].sum()/DF_merge['TOTEMP_x'].sum()), 2)
+        DF_merge['TOTHH GROWTH SHR'] = round(DF_merge['TOTHH GROWTH']/(DF_merge['TOTHH_y'].sum()/DF_merge['TOTHH_x'].sum()), 2)
+
         DF_merge['TOTPOP PCT GROWTH'] = round(DF_merge['TOTPOP_y']/DF_merge['TOTPOP_x']-1, 2)
         DF_merge['TOTEMP PCT GROWTH'] = round(DF_merge['TOTEMP_y']/DF_merge['TOTEMP_x']-1, 2)
         DF_merge['TOTHH PCT GROWTH'] = round(DF_merge['TOTHH_y']/DF_merge['TOTHH_x']-1, 2)
@@ -271,7 +347,6 @@ def taz_calculator(run_num, DF1, DF2):
 
         TAZ_DF_COLUMNS = ['TAZ',
                          'SD_x',
-                         'ZONE_x',
                          'COUNTY_x',
                          'AGREMPN GROWTH',
                          'FPSEMPN GROWTH',
@@ -289,8 +364,11 @@ def taz_calculator(run_num, DF1, DF2):
                          'RES_UNITS GROWTH',
                          'MFDU GROWTH',
                          'SFDU GROWTH',
-                        'TOTPOP PCT GROWTH',
-                      	'TOTEMP PCT GROWTH',
+                         'TOTPOP GROWTH SHR',
+                         'TOTEMP GROWTH SHR',
+                         'TOTHH GROWTH SHR',
+                         'TOTPOP PCT GROWTH',
+                      	 'TOTEMP PCT GROWTH',
                          'AGREMPN SHR CHNG',
                          'FPSEMPN SHR CHNG',
                          'HEREMPN SHR CHNG',
@@ -309,7 +387,9 @@ def taz_calculator(run_num, DF1, DF2):
                          'SFDU SHR CHNG']
         
         DF_TAZ_GROWTH = DF_merge[TAZ_DF_COLUMNS].copy()
-        DF_TAZ_GROWTH = DF_TAZ_GROWTH.rename(columns={'SD_x': 'SD', 'ZONE_x': 'ZONE', 'COUNTY_x': 'COUNTY'})
+        DF_TAZ_GROWTH = DF_TAZ_GROWTH.rename(columns={'SD_x': 'SD', 'COUNTY_x': 'COUNTY'})
+        DF_TAZ_GROWTH['SD_NAME'] = DF_TAZ_GROWTH['SD'].map(sd_mapping)
+        DF_TAZ_GROWTH['CNTY_NAME'] = DF_TAZ_GROWTH['COUNTY'].map(county_mapping)
         DF_TAZ_GROWTH['RUNID'] = run_num
         return DF_TAZ_GROWTH
     else:
@@ -338,6 +418,8 @@ def nontaz_calculator(run_num, DF1, DF2):
                   'incl_units growth',
                   'subsd_units growth',
                   'presrv_units growth',
+                  'totemp growth shr',
+                  'tothh growth shr',
                   'totemp pct growth',
                   'tothh pct growth',
                   'totemp shr chng',
@@ -368,7 +450,8 @@ def nontaz_calculator(run_num, DF1, DF2):
         DF_COLUMNS = ['juris'] + DF_COLUMNS
     elif ('superdistrict' in DF1.columns) & ('superdistrict' in DF2.columns):
         DF_merge = DF1.merge(DF2, on = 'superdistrict').fillna(0)
-        DF_COLUMNS = ['superdistrict'] + DF_COLUMNS
+        DF_merge['sd_name'] = DF_merge['superdistrict'].map(sd_mapping)
+        DF_COLUMNS = ['superdistrict','sd_name'] + DF_COLUMNS
     else:
         print ('Merge cannot be performed')
         
@@ -392,6 +475,9 @@ def nontaz_calculator(run_num, DF1, DF2):
     DF_merge['incl_units growth'] = DF_merge['inclusionary_units_y']-DF_merge['inclusionary_units_x']
     DF_merge['subsd_units growth'] = DF_merge['subsidized_units_y']-DF_merge['subsidized_units_x']
     DF_merge['presrv_units growth'] = DF_merge['preserved_units_y']-DF_merge['preserved_units_x']
+
+    DF_merge['totemp growth shr'] = round(DF_merge['totemp growth']/(DF_merge['totemp_y'].sum()-DF_merge['totemp_x'].sum()), 2)
+    DF_merge['tothh growth shr'] = round(DF_merge['tothh growth']/(DF_merge['tothh_y'].sum()-DF_merge['tothh_x'].sum()), 2)
 
     DF_merge['totemp pct growth'] = round(DF_merge['totemp_y']/DF_merge['totemp_x']-1, 2)
     DF_merge['tothh pct growth'] = round(DF_merge['tothh_y']/DF_merge['tothh_x']-1, 2)
@@ -447,7 +533,7 @@ def GEO_SUMMARY_LOADER(run_num, geo, parcel_baseyear, parcel_endyear):
     if 'fbpchcat' in parcel_endyear.columns:
       zoningtag = 'fbpchcat'
     elif 'pba50chcat' in parcel_endyear.columns:
-      zoningtag = 'pab50chcat'
+      zoningtag = 'pba50chcat'
     elif 'zoningmodcat' in parcel_endyear.columns:
       zoningtag = 'zoningmodcat'
     else: 

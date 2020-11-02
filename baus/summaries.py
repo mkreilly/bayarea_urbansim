@@ -184,6 +184,13 @@ def config(policy, inputs, run_number, scenario, parcels,
     write("FUTURES ROUND 2 / DRAFT BLUEPRINT POLICIES")
     write("")
 
+    # ADUs - these don't run in the base year so can't use their code
+    if scenario in policy['adus_bp_enable']:
+        write("ADUs are from Blueprint")
+    else:
+        write("ADUs are from base file")
+    write("")
+
     # Reduce housing development cost
     policy_loc = (policy["acct_settings"]
                   ["profitability_adjustment_policies"]
@@ -384,6 +391,21 @@ def config(policy, inputs, run_number, scenario, parcels,
             if units is not None:
                 regional_units += units*8
     write("Total unit target for preserving units is %d" % regional_units)
+
+    # office subsidy bonds
+    counter = 0
+    acct_list = []
+    regional_funding = 0
+    policy_loc = policy["acct_settings"]["office_lump_sum_accounts"].items()
+    for key, acct in policy_loc:
+        if scenario in acct["enable_in_scenarios"]:
+            counter += 1
+            acct_list.append(acct["name"].split(' Office')[0])
+            amount = float(acct["total_amount"])
+            regional_funding += amount*5*7
+    write("Office subsidy bonds are activated for %d jurisdictions:" % counter)
+    write(str(acct_list))
+    write("Total funding is $%d" % regional_funding)
 
     f.close()
 
@@ -1655,9 +1677,11 @@ def travel_model_output(parcels, households, jobs, buildings,
                                         % (run_number, final_year)))
         df_growth = taz_calculator(run_number,
                                 df_base, df_final)
+        df_growth = df_growth.set_index(['RUNID', 'TAZ','SD',
+                                        'SD_NAME','COUNTY','CNTY_NAME'])
         df_growth.to_csv(os.path.join("runs", 
                                     "run%d_taz_growth_summaries.csv" %
-                                    run_number),index = False)
+                                    run_number))
         df_growth_c = county_calculator(run_number,
                                         df_base, df_final)
         df_growth_c.to_csv(os.path.join("runs", 
