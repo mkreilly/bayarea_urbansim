@@ -547,7 +547,7 @@ def parcels_geography(parcels, scenario, settings, policy):
 
     # Add Draft Blueprint geographies: PDA, TRA, PPA, sesit
     if scenario in policy['geographies_db_enable']:
-        df["pda_id_pba50"] = df.pda_id_pba50.str.lower()
+        df["pda_id_pba50"] = df.pda_id_pba50_db.str.lower()
         df["gg_id"] = df.gg_id.str.lower()
         df["tra_id"] = df.tra_id.str.lower()
         df['juris_tra'] = df.juris + '-' + df.tra_id
