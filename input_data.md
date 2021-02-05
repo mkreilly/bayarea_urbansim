@@ -107,6 +107,7 @@ BAUS is usually run using scenario-based inputs. These represent various potenti
 * Implement the UGB. Disallow growth outside existing UGBs or outside city limits when a city has no UGB.
 * Change areas within UGBs that have not zoning to typical suburban zoning for each county.
 * In scenarios that assume the UGBs expand, some areas are changed to typical suburban zoning for that county.
+* Note that divisions in the existing system can be "collapsed" by simply ignoring the differentiation and assigning the same change to multiple codes.
 
 
 
