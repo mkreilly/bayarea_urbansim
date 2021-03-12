@@ -2909,7 +2909,7 @@ acct_settings:
     dublin_office_bond_settings:
       name: "Dublin Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Dublin' and (
                                     tra_id == 'tra1' or
@@ -2921,7 +2921,7 @@ acct_settings:
     fremont_office_bond_settings:
       name: "Fremont Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Fremont' and (
                                     tra_id == 'tra1' or
@@ -2933,7 +2933,7 @@ acct_settings:
     oakland_office_bond_settings:
       name: "Oakland Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Oakland' and (
                                     tra_id == 'tra1' or
@@ -2945,7 +2945,7 @@ acct_settings:
     san_leandro_office_bond_settings:
       name: "San Leandro Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'San Leandro' and (
                                     tra_id == 'tra1' or
@@ -2957,7 +2957,7 @@ acct_settings:
     union_city_office_bond_settings:
       name: "Union City Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Union City' and (
                                     tra_id == 'tra1' or
@@ -2969,7 +2969,7 @@ acct_settings:
     antioch_office_bond_settings:
       name: "Antioch Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Antioch' and (
                                     tra_id == 'tra1' or 
@@ -2981,7 +2981,7 @@ acct_settings:
     concord_office_bond_settings:
       name: "Concord Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Concord' and (
                                     tra_id == 'tra1' or 
@@ -2993,7 +2993,7 @@ acct_settings:
     el_cerrito_office_bond_settings:
       name: "El Cerrito Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'El Cerrito' and (
                                     tra_id == 'tra1' or
@@ -3005,7 +3005,7 @@ acct_settings:
     lafayette_office_bond_settings:
       name: "Lafayette Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Lafayette' and (
                                     tra_id == 'tra1' or
@@ -3017,7 +3017,7 @@ acct_settings:
     pittsburg_office_bond_settings:
       name: "Pittsburg Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Pittsburg' and (
                                     tra_id == 'tra1' or
@@ -3029,7 +3029,7 @@ acct_settings:
     richmond_office_bond_settings:
       name: "Richmond Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 24675325
+      total_amount: 21590909
       total_amount_eir: 14062500
       receiving_buildings_filter: juris == 'Richmond' and (
                                     tra_id == 'tra1' or
@@ -3041,7 +3041,7 @@ acct_settings:
     san_rafael_office_bond_settings:
       name: "San Rafael Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 3571429
+      total_amount: 3125000
       total_amount_eir: 4166667
       receiving_buildings_filter: juris == 'San Rafael' and (
                                     tra_id == 'tra1' or
@@ -3054,7 +3054,7 @@ acct_settings:
     fairfield_office_bond_settings:
       name: "Fairfield Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 3571429
+      total_amount: 3125000
       total_amount_eir: 4166667
       receiving_buildings_filter: juris == 'Fairfield' and (
                                     tra_id == 'tra1' or
@@ -3067,7 +3067,7 @@ acct_settings:
     vacaville_office_bond_settings:
       name: "Vacaville Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 3571429
+      total_amount: 3125000
       total_amount_eir: 4166667
       receiving_buildings_filter: juris == 'Vacaville' and (
                                     tra_id == 'tra1' or
@@ -3080,7 +3080,7 @@ acct_settings:
     santa_rosa_office_bond_settings:
       name: "Santa Rosa Office Subsidy Bond"
       sending_buildings_subaccount_def: regional
-      total_amount: 3571429
+      total_amount: 3125000
       total_amount_eir: 4166667
       receiving_buildings_filter: juris == 'Santa Rosa' and (
                                     tra_id == 'tra1' or
