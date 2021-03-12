@@ -445,8 +445,12 @@ def config(policy, inputs, run_number, scenario, parcels,
         if scenario in acct["enable_in_scenarios"]:
             counter += 1
             acct_list.append(acct["name"].split(' Office')[0])
-            amount = float(acct["total_amount"])
-            regional_funding += amount*5*7
+            if 'eir_amount_scenario' in acct and \
+                    scenario in acct['eir_amount_scenario']:
+                amount = float(acct['total_amount_eir'])
+            else:
+                amount = float(acct["total_amount"])
+            regional_funding += amount*5*8
     write("Office subsidy bonds are activated for %d jurisdictions:" % counter)
     write(str(acct_list))
     write("Total funding is $%d" % regional_funding)
