@@ -450,7 +450,7 @@ def config(policy, inputs, run_number, scenario, parcels,
                 amount = float(acct['total_amount_eir'])
             else:
                 amount = float(acct["total_amount"])
-            regional_funding += amount*5*8
+            regional_funding += amount*5*7
     write("Office subsidy bonds are activated for %d jurisdictions:" % counter)
     write(str(acct_list))
     write("Total funding is $%d" % regional_funding)
