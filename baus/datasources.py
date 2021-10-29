@@ -738,6 +738,7 @@ def reprocess_dev_projects(df):
 def get_dev_projects_table(scenario, parcels):
     # requires the user has MTC's urban_data_internal
     # repository alongside bayarea_urbansim
+    # removed mall/office and pub lands projects
     urban_data_repo = ("../urban_data_internal/development_projects/")
     file = "2021_0309_1939_development_projects.csv"
     print('Version of development_projects: {}'.format(file))
