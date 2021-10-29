@@ -2845,8 +2845,8 @@ acct_settings:
       receiving_buildings_filter: 
       receiving_buildings_filter_fb_alt2: county == 'San Mateo' & gg_id > '' & sesit_id != 'hra' & sesit_id != 'hradis'
       subsidize_affordable: True
-      enable_in_scenarios: ['28']
-      alt2_amount_scenarios_fb: []
+      enable_in_scenarios: []
+      alt2_amount_scenarios_fb: ['28']
       geography_scenarios_fb_alt2: ["28"]
 
     santa_clara_bond_settings_alt2:
@@ -2881,7 +2881,7 @@ acct_settings:
       receiving_buildings_filter: 
       receiving_buildings_filter_fb_alt2: county == 'Sonoma' & gg_id > '' & sesit_id != 'hra' & sesit_id != 'hradis'
       subsidize_affordable: True
-      enable_in_scenarios: [""]
+      enable_in_scenarios: []
       alt2_amount_scenarios_fb: ['28']
       geography_scenarios_fb_alt2: ["28"]
 
