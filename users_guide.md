@@ -26,6 +26,12 @@ CONTENTS
 Bay Area UrbanSim (BAUS) is written in python and has been run using MacOS, Windows, and Linux operating systems. The code (except for the pandana sub-model) is single-threaded. The current model generally requires around 20G of memory and takes around 3 hours to run.
 
 ## System Design
+BAUS's fundamental structure is a list of sub-models that are executed in order for each five-year time step. The sub-model list is repeated enough time to reach the forecast's final year. While each step does the same thing (but with different exogenous or endogenous inputs, and different outputs), a number of steps only occur at he start or end of the model run.
+
+model step are at
+
+Models
+
 
 ## Setup and Configuration
 BAUS is mainted as a GitHub [repository](https://github.com/BayAreaMetro/bayarea_urbansim). The top-level readme for the repository holds instructions for installing the model and its requirements (i.e., various python generic python packages and a number of UrbanSim-specific bundles from UDST). After first installation, baus.py is run in "preprocessing" mode to prepare the base year data for use. The model is set up such that the code maintained on GitHub contains 1) the actual UrbanSim software, 2) most of its input data, and 3) its settings. Changes to #1 should be returned to the repository using typical coding practice. Changes to #2 and #3 should be returned if they represent long-term changes to generic inputs but might be discarded if they are simply settings for the current run.
