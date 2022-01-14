@@ -50,15 +50,24 @@ Simulation mode is used to build forecasts or "run UrbanSim", is the most common
 
 ## Output Files
 Each Bay Area UrbanSim run (r#) produces output files. Some are only output at the start and/or finish of the run, but most are produced every in each 5th year of the run (yr). 
+
 ### Core Files
 * run[r#].log shows livetime run progress which includes info on scenario numbers, inputs, model execution, and performance
+* run[r#]\_configuration.log
 * run[r#]\_superdistrict_summaries\_[yr].csv contain a summary of select variables at the Super District level (n=33)
 * run[r#]\_juris_summaries\_[yr].csv contain a summary of select variables at the juridictional level (n=108)
 * run[r#]\_taz_summaries\_[yr].csv contain a summary of select variables at the Travel Analysis Zone level (n=1454)
 * run[r#]\_baseyear\_pda_summaries\_2010.csv contain a summary at the PDA level for the START of 2010 (the other 2020 summary occurs at the end of the year 2010 and so contains one year of model forecast)
+* run[r#]\_county_growth_summaries.csv
+* run[r#]\_county_summaries\_[yr].csv
+
 ### Additional Files
 * run[r#]\_tttt\_[yr].csv
-* run[r#]\_acctlog\_[policy_name\_[final_yr].csv
+* run[r#]\_acctlog\_[policy_name]\_[final_yr].csv
+* run[r#]\_building_data\_[yr].csv
+* run[r#]\_DIS_growth_summaries.csv
+* run[r#]\_dropped_buildings.csv
+* run[r#]\_tttt\_[yr].csv
 
 
 ## Model Schematic
