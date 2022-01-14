@@ -33,54 +33,51 @@ model step are at
 
 ### Models
 
-* slr_inundate",
-* slr_remove_dev",
-* eq_code_buildings",
-* earthquake_demolish",
-* neighborhood_vars",    # street network accessibility
-* regional_vars",        # road network accessibility
-* nrh_simulate",         # non-residential rent hedonic
+* slr_inundate
+* slr_remove_dev
+* eq_code_buildings
+* earthquake_demolish
+* neighborhood_vars    # street network accessibility
+* regional_vars        # road network accessibility
+* nrh_simulate         # non-residential rent hedonic
 * household_relocation
 * households_transition
-* reconcile_unplaced_households", update building/unit/hh correspondence
+* reconcile_unplaced_households update building/unit/hh correspondence
 * jobs_relocation
 * jobs_transition
-* balance_rental_and_ownership_hedonics",
-* price_vars",
-* scheduled_development_events",
+* balance_rental_and_ownership_hedonics
+* price_vars
+* scheduled_development_events brings in a list
 * preserve_affordable
 * lump_sum_accounts
-* subsidized_residential_developer_lump_sum_accts", # run the subsidized residential acct system
+* subsidized_residential_developer_lump_sum_accts # run the subsidized residential acct system
 * office_lump_sum_accounts # run the subsidized office acct system
-* subsidized_office_developer_lump_sum_accts",
-* alt_feasibility",
-* residential_developer",
-* developer_reprocess",
-* retail_developer",
-* office_developer",
-* accessory_units",
-* calculate_vmt_fees",
-* remove_old_units", # (for buildings that were removed)
-        # set up units for new residential buildings
-        "initialize_new_units",
-        # update building/unit/hh correspondence
-        "reconcile_unplaced_households",
-
-* rsh_simulate",     # residential sales hedonic for units
-* rrh_simulate",     # residential rental hedonic for units
+* subsidized_office_developer_lump_sum_accts
+* alt_feasibility
+* residential_developer
+* developer_reprocess
+* retail_developer
+* office_developer
+* accessory_units
+* calculate_vmt_fees
+* remove_old_units # (for buildings that were removed)      
+* initialize_new_units # set up units for new residential buildings
+* reconcile_unplaced_households # update building/unit/hh correspondence
+* rsh_simulate  # residential sales hedonic for units
+* rrh_simulate     # residential rental hedonic for units
 * assign_tenure_to_new_units # (based on higher of predicted price or rent)
 * hlcm_owner_lowincome_simulate
 * hlcm_renter_lowincome_simulate
-* hlcm_owner_simulate", # allocate owners to vacant owner-occupied units
-* hlcm_renter_simulate", # allocate renters to vacant rental units
-* hlcm_owner_simulate_no_unplaced",
-* hlcm_owner_lowincome_simulate_no_unplaced",
-* hlcm_renter_simulate_no_unplaced",
+* hlcm_owner_simulate # allocate owners to vacant owner-occupied units
+* hlcm_renter_simulate # allocate renters to vacant rental units
+* hlcm_owner_simulate_no_unplaced
+* hlcm_owner_lowincome_simulate_no_unplaced
+* hlcm_renter_simulate_no_unplaced
 * hlcm_renter_lowincome_simulate_no_unplaced
 * reconcile_placed_households
 * proportional_elcm        # start with a proportional jobs model
 * elcm_simulate  # displaced by new dev
-* # save_intermediate_tables # saves output for visualization
+* OFF save_intermediate_tables # saves output for visualization
 * topsheet
 * simulation_validation
 * parcel_summary
@@ -88,7 +85,7 @@ model step are at
 * diagnostic_output
 * geographic_summary
 * travel_model_output
-* # "travel_model_2_output
+* OFF "travel_model_2_output
 * hazards_slr_summary
 * hazards_eq_summary
 * slack_report
