@@ -41,19 +41,14 @@ model step are at
 * regional_vars",        # road network accessibility
 * nrh_simulate",         # non-residential rent hedonic
 * household_relocation
-* households_transition",
-*        # update building/unit/hh correspondence
-* reconcile_unplaced_households",
+* households_transition
+* reconcile_unplaced_households", update building/unit/hh correspondence
 * jobs_relocation
 * jobs_transition
-
-        "balance_rental_and_ownership_hedonics",
-
-        "price_vars",
-        "scheduled_development_events",
-
-        # preserve some units
-        "preserve_affordable",
+* balance_rental_and_ownership_hedonics",
+* price_vars",
+* scheduled_development_events",
+* preserve_affordable",
         # run the subsidized residential acct system
         "lump_sum_accounts",
         "subsidized_residential_developer_lump_sum_accts",
