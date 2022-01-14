@@ -36,6 +36,10 @@ Models
 ## Setup and Configuration
 BAUS is mainted as a GitHub [repository](https://github.com/BayAreaMetro/bayarea_urbansim). The top-level readme for the repository holds instructions for installing the model and its requirements (i.e., various python generic python packages and a number of UrbanSim-specific bundles from UDST). After first installation, baus.py is run in "preprocessing" mode to prepare the base year data for use. The model is set up such that the code maintained on GitHub contains 1) the actual UrbanSim software, 2) most of its input data, and 3) its settings. Changes to #1 should be returned to the repository using typical coding practice. Changes to #2 and #3 should be returned if they represent long-term changes to generic inputs but might be discarded if they are simply settings for the current run.
 
+### Python Consistency
+
+### Scenario Framework
+
 ## Input Files
 Input files are all in text (csv or yaml) format stored in three locations:
 * Most input data files are csv files in the [/data](https://github.com/BayAreaMetro/bayarea_urbansim/tree/master/data) directory.
