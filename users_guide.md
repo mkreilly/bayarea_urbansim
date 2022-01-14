@@ -77,11 +77,10 @@ Each Bay Area UrbanSim run (r#) produces output files. Some are only output at t
 ### Travel Model Inputs
 
 ### Additional Files
-* run[r#]\_tttt\_[yr].csv
 * run[r#]\_acctlog\_[policy_name]\_[final_yr].csv
 * run[r#]\_building_data\_[yr].csv
-* run[r#]\_DIS_growth_summaries.csv
-* run[r#]\_dropped_buildings.csv
+* run[r#]\_DIS_growth_summaries.csv provides total growth of households, employment, etc in each displacement zone/jurisdiction category
+* run[r#]\_dropped_buildings.csv ????
 * run[r#]\_GG_growth_saummaries.csv provides total growth of households, employment, etc in each GG/jurisdiction category
 * run[r#]\_HRA_growth_summaries.csv provides total growth of households, employment, etc in each HRA/jurisdiction category
 * run[r#]\_traDIS_growth_sumaries.csv provides total growth of households, employment, etc in each TRA/HRA/jurisdiction category
