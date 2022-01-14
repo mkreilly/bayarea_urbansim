@@ -60,7 +60,7 @@ Each Bay Area UrbanSim run (r#) produces output files. Some are only output at t
 ### Core Files
 * run[r#].log shows livetime run progress which includes info on scenario numbers, inputs, model execution, and performance
 * run[r#]\_configuration.log
-* run[r#]\_topsheet\_[yr].csv
+* run[r#]\_topsheet\_[yr].csv provides basic info to understand the overall nature of a run. For each year it lists the number of householdd, whether or not all agents are placed in buildings, basic stats on the locations of growth and current totals, and jobs-housing balance.
 * run[r#]\_superdistrict_summaries\_[yr].csv contain a summary of select variables at the Super District level (n=33)
 * run[r#]\_juris_summaries\_[yr].csv contain a summary of select variables at the juridictional level (n=108)
 * run[r#]\_taz_summaries\_[yr].csv contain a summary of select variables at the Travel Analysis Zone level (n=1454)
@@ -82,17 +82,17 @@ Each Bay Area UrbanSim run (r#) produces output files. Some are only output at t
 * run[r#]\_building_data\_[yr].csv
 * run[r#]\_DIS_growth_summaries.csv
 * run[r#]\_dropped_buildings.csv
-* run[r#]\_GG_growth_saummaries.csv
-* run[r#]\_HRA_growth_summaries.csv
-* run[r#]\_traDIS_growth_sumaries.csv
-* run[r#]\_tra_growth_summaries.csv
+* run[r#]\_GG_growth_saummaries.csv provides total growth of households, employment, etc in each GG/jurisdiction category
+* run[r#]\_HRA_growth_summaries.csv provides total growth of households, employment, etc in each HRA/jurisdiction category
+* run[r#]\_traDIS_growth_sumaries.csv provides total growth of households, employment, etc in each TRA/HRA/jurisdiction category
+* run[r#]\_tra_growth_summaries.csv provides total growth of households, employment, etc in each TRA/jurisdiction category
 * run[r#]\_juris_growth_summaries\_[yr].csv
 * run[r#]\_superdistrict_growth_summaries.csv
 * run[r#]\_taz_growth_summaries.csv
 * run[r#]\_hazards_slr\_[yr].csv
 * run[r#]\_hazards_slr_buildings\_[yr].csv
 * run[r#]\_parcel_logsums\_[yr].csv
-* run[r#]\_urban_footprint_summary\_[yr].csv
+* run[r#]\_urban_footprint_summary\_[yr].csv provides the total number of units and nonres sqft that is in various greenfield-related zones in that year
 
 
 ## Model Schematic
