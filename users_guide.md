@@ -48,26 +48,19 @@ model step are at
 * balance_rental_and_ownership_hedonics",
 * price_vars",
 * scheduled_development_events",
-* preserve_affordable",
-        # run the subsidized residential acct system
-        "lump_sum_accounts",
-        "subsidized_residential_developer_lump_sum_accts",
-
-        # run the subsidized office acct system
-        "office_lump_sum_accounts",
-        "subsidized_office_developer_lump_sum_accts",
-
-        "alt_feasibility",
-
-        "residential_developer",
-        "developer_reprocess",
-        "retail_developer",
-        "office_developer",
-        "accessory_units",
-        "calculate_vmt_fees",
-
-        # (for buildings that were removed)
-        "remove_old_units",
+* preserve_affordable
+* lump_sum_accounts
+* subsidized_residential_developer_lump_sum_accts", # run the subsidized residential acct system
+* office_lump_sum_accounts # run the subsidized office acct system
+* subsidized_office_developer_lump_sum_accts",
+* alt_feasibility",
+* residential_developer",
+* developer_reprocess",
+* retail_developer",
+* office_developer",
+* accessory_units",
+* calculate_vmt_fees",
+* remove_old_units", # (for buildings that were removed)
         # set up units for new residential buildings
         "initialize_new_units",
         # update building/unit/hh correspondence
@@ -83,26 +76,22 @@ model step are at
 * hlcm_owner_simulate_no_unplaced",
 * hlcm_owner_lowincome_simulate_no_unplaced",
 * hlcm_renter_simulate_no_unplaced",
-* hlcm_renter_lowincome_simulate_no_unplaced",
-* reconcile_placed_households",
-
-        "proportional_elcm",        # start with a proportional jobs model
-        "elcm_simulate",            # displaced by new dev
-
-        # save_intermediate_tables", # saves output for visualization
-
-        "topsheet",
-        "simulation_validation",
-        "parcel_summary",
-        "building_summary",
-        "diagnostic_output",
-        "geographic_summary",
-        "travel_model_output",
-        # "travel_model_2_output",
-        "hazards_slr_summary",
-        "hazards_eq_summary",
-        "slack_report"
-
+* hlcm_renter_lowincome_simulate_no_unplaced
+* reconcile_placed_households
+* proportional_elcm        # start with a proportional jobs model
+* elcm_simulate  # displaced by new dev
+* # save_intermediate_tables # saves output for visualization
+* topsheet
+* simulation_validation
+* parcel_summary
+* building_summary
+* diagnostic_output
+* geographic_summary
+* travel_model_output
+* # "travel_model_2_output
+* hazards_slr_summary
+* hazards_eq_summary
+* slack_report
 
 ## Setup and Configuration
 BAUS is mainted as a GitHub [repository](https://github.com/BayAreaMetro/bayarea_urbansim). The top-level readme for the repository holds instructions for installing the model and its requirements (i.e., various python generic python packages and a number of UrbanSim-specific bundles from UDST). After first installation, baus.py is run in "preprocessing" mode to prepare the base year data for use. The model is set up such that the code maintained on GitHub contains 1) the actual UrbanSim software, 2) most of its input data, and 3) its settings. Changes to #1 should be returned to the repository using typical coding practice. Changes to #2 and #3 should be returned if they represent long-term changes to generic inputs but might be discarded if they are simply settings for the current run.
