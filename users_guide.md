@@ -84,13 +84,15 @@ Each Bay Area UrbanSim run (r#) produces output files. Some are only output at t
 * run[r#]\_dropped_buildings.csv
 * run[r#]\_GG_growth_saummaries.csv
 * run[r#]\_HRA_growth_summaries.csv
+* run[r#]\_traDIS_growth_sumaries.csv
+* run[r#]\_tra_growth_summaries.csv
 * run[r#]\_juris_growth_summaries\_[yr].csv
 * run[r#]\_superdistrict_growth_summaries.csv
 * run[r#]\_taz_growth_summaries.csv
 * run[r#]\_hazards_slr\_[yr].csv
 * run[r#]\_hazards_slr_buildings\_[yr].csv
 * run[r#]\_parcel_logsums\_[yr].csv
-* 
+* run[r#]\_urban_footprint_summary\_[yr].csv
 
 
 ## Model Schematic
