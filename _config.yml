@@ -30,7 +30,7 @@ github:
 pages_list:       
   Model Overview: 'model_overview/'
   Guide: 'guide/'
-  Input Data Preparation: 'input_data/'
+  Input: 'input/'
   Output: 'output/'
   PBA50: 'pba2050/'
   Horizon: 'horizon/'
