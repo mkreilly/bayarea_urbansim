@@ -29,66 +29,7 @@ Bay Area UrbanSim (BAUS) is written in python and has been run using MacOS, Wind
 ## System Design
 BAUS's fundamental structure is a list of sub-models that are executed in order for each five-year time step. The sub-model list is repeated enough time to reach the forecast's final year. While each step does the same thing (but with different exogenous or endogenous inputs, and different outputs), a number of steps only occur at he start or end of the model run.
 
-model step are at
 
-### Models
-
-* slr_inundate floods parcels impacted by sea level rise
-* slr_remove_dev removes buildings on parcels impacted by sea level rise
-* eq_code_buildings 
-* earthquake_demolish removes buildings
-* neighborhood_vars    # street network accessibility
-* regional_vars        # road network accessibility
-* nrh_simulate         # non-residential rent hedonic
-* household_relocation
-* households_transition
-* reconcile_unplaced_households update building/unit/hh correspondence
-* jobs_relocation
-* jobs_transition
-* balance_rental_and_ownership_hedonics
-* price_vars
-* scheduled_development_events brings in a list
-* preserve_affordable
-* lump_sum_accounts
-* subsidized_residential_developer_lump_sum_accts # run the subsidized residential acct system
-* office_lump_sum_accounts # run the subsidized office acct system
-* subsidized_office_developer_lump_sum_accts
-* alt_feasibility
-* residential_developer
-* developer_reprocess
-* retail_developer
-* office_developer
-* accessory_units
-* calculate_vmt_fees
-* remove_old_units # (for buildings that were removed)      
-* initialize_new_units # set up units for new residential buildings
-* reconcile_unplaced_households # update building/unit/hh correspondence
-* rsh_simulate simulates the residential sales hedonic for units
-* rrh_simulate simulates the residential rental hedonic for units
-* assign_tenure_to_new_units based on higher of predicted price or rent
-* hlcm_owner_lowincome_simulate household location choice model that allocates low income households to owner-occupied units
-* hlcm_renter_lowincome_simulate household location choice model that allocates low income households to renter-occupied units
-* hlcm_owner_simulate household location choice model that allocates remaining households to owner-occupied units
-* hlcm_renter_simulate household location choice model that allocates remaining households to renter-occupied units
-* hlcm_owner_simulate_no_unplaced
-* hlcm_owner_lowincome_simulate_no_unplaced
-* hlcm_renter_simulate_no_unplaced
-* hlcm_renter_lowincome_simulate_no_unplaced
-* reconcile_placed_households
-* proportional_elcm        # start with a proportional jobs model
-* elcm_simulate  # displaced by new dev
-* OFF save_intermediate_tables # saves output for visualization
-* topsheet write out table related to x
-* simulation_validation
-* parcel_summary write out tables related to x
-* building_summary write out tables related to x
-* diagnostic_output write out tables related to x
-* geographic_summary write out tables related to x
-* travel_model_output write out tables for inputs to Travel Model 1.5
-* OFF travel_model_2_output write out tables for inputs to Travel Model 2
-* hazards_slr_summary write out tables related to sea level rise impacts
-* hazards_eq_summary writes out tables related to earthquake impacts
-* slack_report sends out information on model completion to Slack
 
 ## Setup and Configuration
 BAUS is mainted as a GitHub [repository](https://github.com/BayAreaMetro/bayarea_urbansim). The top-level readme for the repository holds instructions for installing the model and its requirements (i.e., various python generic python packages and a number of UrbanSim-specific bundles from UDST). After first installation, baus.py is run in "preprocessing" mode to prepare the base year data for use. The model is set up such that the code maintained on GitHub contains 1) the actual UrbanSim software, 2) most of its input data, and 3) its settings. Changes to #1 should be returned to the repository using typical coding practice. Changes to #2 and #3 should be returned if they represent long-term changes to generic inputs but might be discarded if they are simply settings for the current run.
