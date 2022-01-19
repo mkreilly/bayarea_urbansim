@@ -29,8 +29,9 @@ github:
 # This is the list of pages to include in the header of the website.
 pages_list:       
   Model Overview: 'model_overview/'
+  Guide: 'guide/'
   Input Data Preparation: 'input_data/'
-  Users Guide: 'users_guide/'
+  Output: 'output/'
   PBA50: 'pba2050/'
   Horizon: 'horizon/'
   PBA40: 'pba2040/'
