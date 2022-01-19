@@ -52,7 +52,7 @@ model step are at
 * household_relocation
 * households_transition
 * reconcile_unplaced_households update building/unit/hh correspondence
-* [jobs_relocation](models#jobs-relocation)
+* [jobs_relocation](Models#jobs-relocation)
 * jobs_transition
 * balance_rental_and_ownership_hedonics
 * price_vars
