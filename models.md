@@ -10,9 +10,9 @@ title: Models
 ---
 CONTENTS
  
-1. [res dev](#residential-developer)
-2. [Approach](#approach)
-3. [Application Types](#application)
+1. [Hazards](#hazards)
+2. [Accessibility](#accessibility)
+3. [Non-Residential Prices](#nonresidential-prices)
 4. [Model System](#model-system)
 5. [More Information](#more-information)
 6. [Model Schematic](#model-schematic)
@@ -25,9 +25,11 @@ CONTENTS
 ### eq_code_buildings 
 ### earthquake_demolish
 
-## Background
+## Accessibility
 ### neighborhood_vars
 ### regional_vars
+
+## Nonresidential Prices
 ### nrh_simulate
 
 ## New and Moving Households and Jobs
