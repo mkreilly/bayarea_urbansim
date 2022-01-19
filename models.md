@@ -19,14 +19,15 @@ CONTENTS
 
 ---
 
-slr_inundate floods parcels impacted by sea level rise
-slr_remove_dev removes buildings on parcels impacted by sea level rise
-eq_code_buildings 
-earthquake_demolish removes buildings
-neighborhood_vars    # street network accessibility
-regional_vars        # road network accessibility
-nrh_simulate         # non-residential rent hedonic
-household_relocation
+## subset
+### slr_inundate floods parcels impacted by sea level rise
+### slr_remove_dev removes buildings on parcels impacted by sea level rise
+### eq_code_buildings 
+### earthquake_demolish removes buildings
+### neighborhood_vars    # street network accessibility
+### regional_vars        # road network accessibility
+### nrh_simulate         # non-residential rent hedonic
+### household_relocation
 households_transition
 reconcile_unplaced_households update building/unit/hh correspondence
 jobs_relocation
