@@ -13,9 +13,12 @@ CONTENTS
 1. [Hazards](#hazards)
 2. [Accessibility](#accessibility)
 3. [Non-Residential Prices](#nonresidential-prices)
-4. [Model System](#model-system)
-5. [More Information](#more-information)
-6. [Model Schematic](#model-schematic)
+4. [New and Moving Households and Jobs](#new-and-moving-households-and-jobs)
+5. [Prices](#prices)
+6. [Develop Buildings](#develop-buildings)
+7. [Place Households](#place-households)
+8. [Place Jobs](place-jobs)
+9. [Summaries Validation and Reports](#summaries-validation-and-Reports)
 
 ---
 
@@ -39,6 +42,8 @@ CONTENTS
 ### jobs_relocation
 ### jobs_transition
 ### balance_rental_and_ownership_hedonics
+
+## Prices 
 ### price_vars
 
 ## Develop Buildings
@@ -49,7 +54,7 @@ CONTENTS
 ### office_lump_sum_accounts # run the subsidized office acct system
 ### subsidized_office_developer_lump_sum_accts
 ### alt_feasibility
-## residential_developer
+### residential_developer
 ### developer_reprocess
 ### retail_developer
 ### office_developer
@@ -77,7 +82,7 @@ CONTENTS
 ### proportional_elcm        # start with a proportional jobs model
 ### elcm_simulate  # displaced by new dev
 
-## Summaries, Validation, and Reports
+## Summaries Validation and Reports
 ### OFF save_intermediate_tables # saves output for visualization
 ### topsheet write out table related to x
 ### simulation_validation
