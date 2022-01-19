@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Input Data
+title: Input
 ---
 
 *Work in Progress*
 
-# Input Data
+# Input Files
 
 ---
 CONTENTS
