@@ -65,7 +65,7 @@ model step are at
 * alt_feasibility
 * residential_developer
 * developer_reprocess
-* retail_developer
+* [retail_developer](http://bayareametro.github.io/bayarea_urbansim/models/#retail-develper)
 * office_developer
 * accessory_units
 * calculate_vmt_fees
