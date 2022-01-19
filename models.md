@@ -47,7 +47,7 @@ CONTENTS
 ### office_lump_sum_accounts # run the subsidized office acct system
 ### subsidized_office_developer_lump_sum_accts
 ### alt_feasibility
-### residential_developer
+## residential_developer
 ### developer_reprocess
 ### retail_developer
 ### office_developer
