@@ -36,7 +36,7 @@ CONTENTS
 ### nrh_simulate
 
 ## New and Moving Households and Jobs
-### household_relocation
+### [household_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L338)
 ### [households_transition](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L33)
 ### reconcile_unplaced_households 
 update building/unit/hh correspondence
@@ -48,7 +48,7 @@ update building/unit/hh correspondence
 ### price_vars
 
 ## Develop Buildings
-### scheduled_development_events
+### [scheduled_development_events](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L373)
 brings in a list
 ### preserve_affordable
 ### lump_sum_accounts
@@ -57,11 +57,11 @@ run the subsidized residential acct system
 ### office_lump_sum_accounts
 run the subsidized office acct system
 ### subsidized_office_developer_lump_sum_accts
-### alt_feasibility
-### residential_developer
+### [alt_feasibility](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L555)
+### [residential_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L581)
 ### developer_reprocess
-### retail_developer
-### office_developer
+### [retail_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L711)
+### [office_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L789)
 ### [accessory_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L169)
 ### calculate_vmt_fees
 ### remove_old_units
