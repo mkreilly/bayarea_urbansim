@@ -33,10 +33,10 @@ CONTENTS
 ### [regional_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1109)
 
 ## Nonresidential Prices
-### nrh_simulate
+### [nrh_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L708)
 
 ## New and Moving Households and Jobs
-### [household_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L338)
+### [household_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L784)
 ### [households_transition](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L33)
 ### reconcile_unplaced_households 
 update building/unit/hh correspondence
@@ -64,33 +64,33 @@ run the subsidized office acct system
 ### [office_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L789)
 ### [accessory_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L169)
 ### calculate_vmt_fees
-### remove_old_units
+### [remove_old_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L408)
 (for buildings that were removed)      
-### initialize_new_units
+### [initialize_new_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L461)
 set up units for new residential buildings
-### reconcile_unplaced_households
+### [reconcile_unplaced_households](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L336)
 update building/unit/hh correspondence
-### rsh_simulate
+### [rsh_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L745)
 simulates the residential sales hedonic for units
-### rrh_simulate
+### [rrh_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L764)
 simulates the residential rental hedonic for units
 ### assign_tenure_to_new_units
 based on higher of predicted price or rent
 
 ## Place Households
-### hlcm_owner_lowincome_simulate
+### [hlcm_owner_lowincome_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L890)
 household location choice model that allocates low income households to owner-occupied units
-### hlcm_renter_lowincome_simulate
+### [hlcm_renter_lowincome_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L919)
 household location choice model that allocates low income households to renter-occupied units
-### hlcm_owner_simulate
+### [hlcm_owner_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L871)
 household location choice model that allocates remaining households to owner-occupied units
-### hlcm_renter_simulate
+### [hlcm_renter_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L905)
 household location choice model that allocates remaining households to renter-occupied units
-### hlcm_owner_simulate_no_unplaced
-### hlcm_owner_lowincome_simulate_no_unplaced
-### hlcm_renter_simulate_no_unplaced
-### hlcm_renter_lowincome_simulate_no_unplaced
-### reconcile_placed_households
+### [hlcm_owner_simulate_no_unplaced](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L1009)
+### [hlcm_owner_lowincome_simulate_no_unplaced](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L1029)
+### [hlcm_renter_simulate_no_unplaced](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L1049)
+### [hlcm_renter_lowincome_simulate_no_unplaced](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L1069)
+### [reconcile_placed_households](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L262)
 
 ## Place Jobs
 ### [proportional_elcm](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L185)
@@ -99,7 +99,7 @@ start with a proportional jobs model
 displaced by new dev
 
 ## Summaries Validation and Reports
-### OFF save_intermediate_tables
+### OFF [save_intermediate_tables](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L687)
 saves output for visualization
 ### topsheet 
 write out table related to x
