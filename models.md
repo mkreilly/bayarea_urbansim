@@ -75,7 +75,7 @@ update building/unit/hh correspondence
 simulates the residential sales hedonic for units
 ### [rrh_simulate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L764)
 simulates the residential rental hedonic for units
-### assign_tenure_to_new_units
+### [assign_tenure_to_new_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L577)
 based on higher of predicted price or rent
 
 ## Place Households
