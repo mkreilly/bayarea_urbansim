@@ -102,24 +102,24 @@ displaced by new dev
 ## Summaries Validation and Reports
 ### OFF [save_intermediate_tables](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L687)
 saves output for visualization
-### topsheet 
+### [topsheet](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L458)
 write out table related to x
-### simulation_validation
-### parcel_summary 
+### [simulation_validation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/validation.py#L110)
+### [parcel_summary](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L1327)
 write out tables related to x
-### building_summary 
+### [building_summary](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L1303)
 write out tables related to x
-### diagnostic_output 
+### [diagnostic_output](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L946)
 write out tables related to x
-### geographic_summary 
+### [geographic_summary](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L1028)
 write out tables related to x
 ### [travel_model_output](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L1467) 
 write out tables for inputs to Travel Model 1.5
-### OFF travel_model_2_output 
+### OFF [travel_model_2_output](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L1765)
 write out tables for inputs to Travel Model 2
-### hazards_slr_summary 
+### [hazards_slr_summary](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L2266)
 write out tables related to sea level rise impacts
-### hazards_eq_summary
+### [hazards_eq_summary](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L2350)
 writes out tables related to earthquake impacts
-### slack_report 
+### [slack_report](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/summaries.py#L2493)
 sends out information on model completion to Slack
