@@ -23,10 +23,10 @@ CONTENTS
 ---
 
 ## Hazards
-### slr_inundate
-### slr_remove_dev
-### eq_code_buildings 
-### earthquake_demolish
+### [slr_inundate](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/slr.py#L16)
+### [slr_remove_dev](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/slr.py#L86)
+### [eq_code_buildings](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/earthquake.py#L19)
+### [earthquake_demolish](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/earthquake.py#L252)
 
 ## Accessibility
 ### [neighborhood_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1098)
