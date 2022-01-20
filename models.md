@@ -37,10 +37,10 @@ CONTENTS
 
 ## New and Moving Households and Jobs
 ### household_relocation
-### households_transition
+### [households_transition](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L33)
 ### reconcile_unplaced_households 
 update building/unit/hh correspondence
-### jobs_relocation
+### [jobs_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L307)
 ### jobs_transition
 ### balance_rental_and_ownership_hedonics
 
@@ -62,7 +62,7 @@ run the subsidized office acct system
 ### developer_reprocess
 ### retail_developer
 ### office_developer
-### accessory_units
+### [accessory_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L169)
 ### calculate_vmt_fees
 ### remove_old_units
 (for buildings that were removed)      
@@ -93,9 +93,9 @@ household location choice model that allocates remaining households to renter-oc
 ### reconcile_placed_households
 
 ## Place Jobs
-### proportional_elcm
+### [proportional_elcm](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L185)
 start with a proportional jobs model
-### elcm_simulate
+### [elcm_simulate][https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L24)
 displaced by new dev
 
 ## Summaries Validation and Reports
