@@ -37,6 +37,7 @@ CONTENTS
 
 ## New and Moving Households and Jobs
 ### [household_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L784)
+clarify two versions of this one with s and one wo
 ### [households_transition](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L33)
 ### reconcile_unplaced_households 
 update building/unit/hh correspondence
