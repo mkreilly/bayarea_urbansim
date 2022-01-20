@@ -39,11 +39,11 @@ CONTENTS
 ### [household_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L784)
 clarify two versions of this one with s and one wo
 ### [households_transition](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L33)
-### reconcile_unplaced_households 
+### [reconcile_unplaced_households](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L336)
 update building/unit/hh correspondence
 ### [jobs_relocation](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L307)
 ### jobs_transition
-### balance_rental_and_ownership_hedonics
+### [balance_rental_and_ownership_hedonics](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L1089)
 
 ## Prices 
 ### [price_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1148)
