@@ -51,20 +51,20 @@ update building/unit/hh correspondence
 ## Develop Buildings
 ### [scheduled_development_events](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L373)
 brings in a list
-### preserve_affordable
-### lump_sum_accounts
+### [preserve_affordable](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/subsidies.py#L64)
+### [lump_sum_accounts](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/subsidies.py#L153)
 ### subsidized_residential_developer_lump_sum_accts
 run the subsidized residential acct system
-### office_lump_sum_accounts
+### [office_lump_sum_accounts](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/subsidies.py#L211)
 run the subsidized office acct system
-### subsidized_office_developer_lump_sum_accts
+### [subsidized_office_developer_lump_sum_accts](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/subsidies.py#L1238)
 ### [alt_feasibility](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L555)
 ### [residential_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L581)
 ### [developer_reprocess](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L893)
 ### [retail_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L711)
 ### [office_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L789)
 ### [accessory_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L169)
-### calculate_vmt_fees
+### [calculate_vmt_fees](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/subsidies.py#L500)
 ### [remove_old_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L408)
 (for buildings that were removed)      
 ### [initialize_new_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/ual.py#L461)
