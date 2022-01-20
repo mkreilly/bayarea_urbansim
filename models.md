@@ -96,7 +96,7 @@ household location choice model that allocates remaining households to renter-oc
 ## Place Jobs
 ### [proportional_elcm](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L185)
 start with a proportional jobs model
-### [elcm_simulate][https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L24)
+### [elcm_simulate]{https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L24)
 displaced by new dev
 
 ## Summaries Validation and Reports
