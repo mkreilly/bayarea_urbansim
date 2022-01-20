@@ -29,8 +29,8 @@ CONTENTS
 ### earthquake_demolish
 
 ## Accessibility
-### neighborhood_vars
-### regional_vars
+### [neighborhood_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1098)
+### [regional_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1109)
 
 ## Nonresidential Prices
 ### nrh_simulate
@@ -45,7 +45,7 @@ update building/unit/hh correspondence
 ### balance_rental_and_ownership_hedonics
 
 ## Prices 
-### price_vars
+### [price_vars](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L1148)
 
 ## Develop Buildings
 ### [scheduled_development_events](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L373)
@@ -59,7 +59,7 @@ run the subsidized office acct system
 ### subsidized_office_developer_lump_sum_accts
 ### [alt_feasibility](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L555)
 ### [residential_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L581)
-### developer_reprocess
+### [developer_reprocess](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L893)
 ### [retail_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L711)
 ### [office_developer](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L789)
 ### [accessory_units](https://github.com/BayAreaMetro/bayarea_urbansim/blob/820554cbabee51725c445b9fd211542db8876c9f/baus/models.py#L169)
