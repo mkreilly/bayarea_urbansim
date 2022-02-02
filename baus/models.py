@@ -570,9 +570,19 @@ def alt_feasibility(parcels, settings,
                           config=config,
                           **kwargs)
 
+    print('export parcel feasibility_raw for year {}'.format(orca.get_injectable("year")))
+    feasibility_temp = orca.get_table("feasibility").to_frame()
+    feasibility_temp.to_csv('runs/run{}_feasibility_raw_{}.csv'.format(
+        orca.get_injectable("run_number"),
+        orca.get_injectable("year")))
+
     f = subsidies.policy_modifications_of_profit(
         orca.get_table('feasibility').to_frame(),
         parcels)
+    print('export feasibility_net for year {}'.format(orca.get_injectable("year")))
+    f.to_csv('runs/run{}_feasibility_net_{}.csv'.format(
+            orca.get_injectable("run_number"),
+            orca.get_injectable("year")))
 
     orca.add_table("feasibility", f)
 
@@ -706,6 +716,12 @@ def residential_developer(feasibility, households, buildings, parcels, year,
 
         summary.add_parcel_output(new_buildings)
 
+    parcel_output_export = summary.parcel_output
+    if summary.parcel_output is not None:
+        parcel_output_export.to_csv(
+            "runs/run{}_parcel_output_afterReSDev_{}.csv".format(
+                orca.get_injectable("run_number"), year)
+            )
 
 @orca.step()
 def retail_developer(jobs, buildings, parcels, nodes, feasibility,
@@ -1100,9 +1116,16 @@ def neighborhood_vars(net):
     nodes = nodes.replace(-np.inf, np.nan)
     nodes = nodes.replace(np.inf, np.nan)
     nodes = nodes.fillna(0)
-
+    print('describe nodes:')
     print(nodes.describe())
+    print(nodes.head())
     orca.add_table("nodes", nodes)
+    print('export nodes from neighborhood_vars for year {}'.format(orca.get_injectable("year")))
+    nodes_export = orca.get_table('nodes').to_frame()
+    nodes_export.to_csv('runs/run{}_nodes_neighborhood_{}.csv'.format(
+            orca.get_injectable("run_number"),
+            orca.get_injectable("year")))
+
 
 
 @orca.step()
@@ -1116,6 +1139,11 @@ def regional_vars(net):
 
     print(nodes.describe())
     orca.add_table("tmnodes", nodes)
+    print('export nodes from regional_vars for year {}'.format(orca.get_injectable("year")))
+    tmnodes_export = orca.get_table('tmnodes').to_frame()
+    tmnodes_export.to_csv('runs/run{}_nodes_regional_{}.csv'.format(
+                orca.get_injectable("run_number"),
+                orca.get_injectable("year")))
 
 
 @orca.step()
@@ -1148,7 +1176,14 @@ def regional_pois(settings, landmarks):
 def price_vars(net):
     nodes2 = networks.from_yaml(net["walk"], "price_vars.yaml")
     nodes2 = nodes2.fillna(0)
+    print('describe nodes2:')
     print(nodes2.describe())
+    print(nodes2.head())
     nodes = orca.get_table('nodes')
     nodes = nodes.to_frame().join(nodes2)
     orca.add_table("nodes", nodes)
+    print('export nodes with price_vars for year {}'.format(orca.get_injectable("year")))
+    nodes_export = orca.get_table('nodes').to_frame()
+    nodes_export.to_csv('runs/run{}_nodes_priceVars_{}.csv'.format(
+            orca.get_injectable("run_number"),
+            orca.get_injectable("year")))
