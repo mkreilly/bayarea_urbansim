@@ -579,7 +579,7 @@ def alt_feasibility(parcels, settings,
     f = subsidies.policy_modifications_of_profit(
         orca.get_table('feasibility').to_frame(),
         parcels)
-    print('export feasibility_net for year {}'.format(orca.get_injectable("year")))
+    print('export parcel feasibility_net for year {}'.format(orca.get_injectable("year")))
     f.to_csv('runs/run{}_feasibility_net_{}.csv'.format(
             orca.get_injectable("run_number"),
             orca.get_injectable("year")))
