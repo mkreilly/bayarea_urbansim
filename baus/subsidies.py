@@ -1171,6 +1171,10 @@ def subsidized_residential_developer_lump_sum_accts(
         # but the only cost is in time - the results should be the same
         orca.eval_step("subsidized_residential_feasibility")
         feasibility = orca.get_table("feasibility").to_frame()
+        print('export feasibility from res lump-sum-accts for year {}'.format(year))
+        feasibility.to_csv('runs/run{}_feasibility_subResDev_{}.csv'.format(
+            orca.get_injectable("run_number"), year))
+
         feasibility = feasibility.stack(level=0).\
             reset_index(level=1, drop=True)
 
