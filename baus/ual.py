@@ -11,7 +11,8 @@ from orca_test import OrcaSpec, TableSpec, ColumnSpec, InjectableSpec
 from urbansim.developer.developer import Developer as dev
 from urbansim.models.relocation import RelocationModel
 from urbansim.utils import misc
-from urbansim_defaults import utils
+# from urbansim_defaults import utils
+from src_for_debug.urbansim_defaults.urbansim_defaults import utils
 
 
 ###############################################################################

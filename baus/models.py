@@ -9,10 +9,13 @@ import pandas as pd
 
 import orca
 import pandana.network as pdna
-from urbansim.developer import sqftproforma
+# from urbansim.developer import sqftproforma
+from src_for_debug.urbansim.urbansim.developer import sqftproforma
 from urbansim.developer.developer import Developer as dev
 from urbansim.utils import misc, networks
-from urbansim_defaults import models, utils
+# from urbansim_defaults import models, utils
+from urbansim_defaults import models
+from src_for_debug.urbansim_defaults.urbansim_defaults import utils
 
 from baus import datasources, subsidies, summaries, variables
 from baus.utils import \
