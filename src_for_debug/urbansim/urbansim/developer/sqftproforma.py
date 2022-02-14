@@ -316,8 +316,8 @@ class SqFtProForma(object):
 
         """
         c = self.config
-        # print('test this _generate_lookup function')
-        # print(c)
+        print('test this _generate_lookup function')
+        print(c)
 
         # get all the building forms we can use
         keys = c.forms.keys()

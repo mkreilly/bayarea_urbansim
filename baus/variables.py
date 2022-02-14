@@ -4,7 +4,8 @@ from urbansim.utils import misc
 import orca
 from baus import datasources
 from baus.utils import nearest_neighbor, groupby_random_choice
-from urbansim_defaults import utils
+# from urbansim_defaults import utils
+from src_for_debug.urbansim_defaults.urbansim_defaults import utils
 from urbansim_defaults import variables
 
 

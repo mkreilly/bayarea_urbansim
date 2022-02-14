@@ -7,11 +7,13 @@ import pandas as pd
 import numpy as np
 from functools import reduce
 from urbansim import accounts
-from urbansim_defaults import utils
+# from urbansim_defaults import utils
+from src_for_debug.urbansim_defaults.urbansim_defaults import utils
 from six import StringIO
 from urbansim.utils import misc
 from baus.utils import add_buildings
-from urbansim.developer import sqftproforma
+# from urbansim.developer import sqftproforma
+from src_for_debug.urbansim.urbansim.developer import sqftproforma
 
 
 # this method is a custom profit to probability function where we test the

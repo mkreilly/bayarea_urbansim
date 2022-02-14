@@ -9,7 +9,9 @@ from urbansim.models import RegressionModel, SegmentedRegressionModel, \
     MNLDiscreteChoiceModel, SegmentedMNLDiscreteChoiceModel, \
     GrowthRateTransition, transition
 from urbansim.models.supplydemand import supply_and_demand
-from urbansim.developer import sqftproforma, developer
+# from urbansim.developer import sqftproforma, developer
+from urbansim.developer import developer
+from src_for_debug.urbansim.urbansim.developer import sqftproforma
 from urbansim.utils import misc
 
 
@@ -669,7 +671,7 @@ def run_feasibility(parcels, parcel_price_callback,
     print(df[pf.config.uses].describe())
 
     d = {}
-    # d_all = {}
+    d_all = {}
     forms = forms_to_test or pf.config.forms
     for form in forms:
         print("Computing feasibility for form %s" % form)
@@ -688,19 +690,19 @@ def run_feasibility(parcels, parcel_price_callback,
 
         d[form] = pf.lookup(form, newdf, only_built=only_built,
                             pass_through=pass_through)
-        # d_all[form] = pf.lookup(form, newdf, only_built=False,
-        #                         pass_through=pass_through)
+        d_all[form] = pf.lookup(form, newdf, only_built=False,
+                                pass_through=pass_through)
         if residential_to_yearly and "residential" in pass_through:
             d[form]["residential"] /= pf.config.cap_rate
-            # d_all[form]["residential"] /= pf.config.cap_rate
+            d_all[form]["residential"] /= pf.config.cap_rate
 
     far_predictions = pd.concat(d.values(), keys=d.keys(), axis=1)
-    # far_predictions_all = pd.concat(d_all.values(), keys=d.keys(), axis=1)
-    # print('format of far_predictions_all in step run_feasibility: ', format(far_predictions_all))
-    # print('export far_predictions_all in step run_feasibility')
-    # far_predictions_all.to_csv('runs/run{}_feasibility_allParcels_{}.csv'.format(
-    #     orca.get_injectable("run_number"),
-    #     orca.get_injectable("year")))
+    far_predictions_all = pd.concat(d_all.values(), keys=d.keys(), axis=1)
+    print('format of far_predictions_all in step run_feasibility: ', format(far_predictions_all))
+    print('export far_predictions_all in step run_feasibility')
+    far_predictions_all.to_csv('runs/run{}_feasibility_allParcels_{}.csv'.format(
+        orca.get_injectable("run_number"),
+        orca.get_injectable("year")))
 
     orca.add_table("feasibility", far_predictions)
 
